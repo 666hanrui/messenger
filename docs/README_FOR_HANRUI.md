@@ -1,10 +1,15 @@
 # 当前仓库地图
 
-这个仓库现在已经清理成一个单一用途的参考仓库：保留原版 Messenger 的静态快照，同时保存《南都爱情故事》的策划和正文文档。
+这个仓库现在已经整理成两个清楚部分：
+
+1. 根目录保留原版 Messenger 的静态参考快照。
+2. `nandu-love-story/` 作为《南都爱情故事》的独立项目文件夹。
 
 它不再是那个混着实验工程、南京模型、Vite 服务和临时舞台的目录。
 
-## 根目录
+---
+
+## 根目录：原版 Messenger 静态快照
 
 - `index.html`  
   原版 Messenger 静态快照入口。
@@ -21,13 +26,39 @@
 - `README.md`  
   给 GitHub 首页看的仓库说明。
 
-## 文档目录
+---
+
+## 《南都爱情故事》项目文件夹
+
+- `nandu-love-story/`  
+  原创项目《南都爱情故事》的独立项目空间。
+
+- `nandu-love-story/README.md`  
+  项目简介、边界和后续工程方向。
+
+后续正式开发时，源码、素材、脚本和项目文档都应该优先放在这里，而不是塞进仓库根目录。
+
+推荐后续结构：
+
+```text
+nandu-love-story/
+  package.json
+  src/
+  public/
+  docs/
+```
+
+---
+
+## 历史文档目录
+
+当前 `docs/` 仍保留历史整理文档，后续应逐步迁入 `nandu-love-story/docs/`。
 
 - `docs/nanjing-slow-mail-concept.md`  
   早期“南京慢递”方向概念文档。现在项目名已经确定为《南都爱情故事》，但这份文档仍然保留了最初的题材来源和设计思路。
 
 - `docs/nandu-love-story-draft.md`  
-  已经通过的正文草稿。后续继续写故事时，应该优先续写或整理到这里。
+  已经通过的正文草稿。后续继续写故事时，应该优先续写或整理到 `nandu-love-story/` 中。
 
 - `docs/audio-scene-generation-plan.md`  
   场景音乐、环境声、音效、语音和触发方式规划。
@@ -40,6 +71,8 @@
 
 - `docs/assets/nanjing-slow-mail-style-anchor.png`  
   风格参考图。
+
+---
 
 ## 本地运行原站
 
@@ -55,6 +88,8 @@ python3 -m http.server 3001 --bind 127.0.0.1
 http://127.0.0.1:3001/
 ```
 
+---
+
 ## 不要再找这些目录
 
 下面这些是之前混乱阶段出现过的东西，现在不属于这个仓库：
@@ -69,4 +104,4 @@ http://127.0.0.1:3001/
 - `vite.config.ts`
 - `mochou-road.html`
 
-如果后面重新开始做正式游戏，建议新建干净工程，不要直接把实验代码塞回这个原站快照根目录。
+如果后面重新开始做正式游戏，请在 `nandu-love-story/` 下创建干净工程，不要直接把实验代码塞回这个原站快照根目录。
