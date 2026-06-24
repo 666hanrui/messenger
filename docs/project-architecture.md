@@ -1,152 +1,173 @@
-# 《南都爱情故事》工程分层说明
+# 《南都爱情故事》未来工程分层建议
 
-当前源码已经按三层拆开：
+这份文档描述的是后续正式开发时建议采用的工程结构。它不是当前仓库的文件清单。
 
-```text
-src/
-  main.ts          # 极薄入口，只加载 game/main
-  game/            # 游戏逻辑层：玩家、任务、NPC、对白、HUD、音频、入口装配
-  reference/       # 原版参考层：Messenger 资源加载、terrain、水、树叶、shader、后处理
-  nanjing/         # 南京内容层：南京模型、地点、碰撞、场景原型
-```
+当前仓库只保留两类内容：
 
-## 1. 原版参考层：`src/reference/`
+1. 原版 Messenger 的静态参考快照
+2. 《南都爱情故事》的策划、正文和音频规划文档
 
-这一层来自对 `messenger-copy/src/lib/messenger/` 的迁移和整理，职责是保留原版 Messenger 的渲染与资源组织方法。
+正式游戏工程重新开始时，应该和原站快照分开管理，避免再次把参考资源、实验原型、模型处理脚本和游戏源码混在一起。
 
-重点文件：
+## 推荐原则
 
-- `src/reference/gameplayTerrain.ts`
-  - 加载原版 gameplay terrain 的 Draco 分块。
-  - 对应参考工程的 `createGameplayTerrainGroup()`。
+### 1. 原版参考只做参考
 
-- `src/reference/gameplayWater.ts`
-  - 加载 gameplay water 几何体。
-  - 提供水材质、时间更新、深度贴图接入。
+原版 Messenger 的静态资源可以用来研究：
 
-- `src/reference/terrainMaterial.ts`
-  - terrain shader 材质。
+- 地形组织方式
+- 水面、树叶、材质和后处理的观感
+- 小地图的尺度控制
+- 镜头距离和角色在画面中的比例
+- 轻任务、低压力探索的节奏
 
-- `src/reference/treeLeaves.ts`
-  - 树叶 shader 材质与动画。
+但不要把压缩后的原版 bundle 当作我们自己的源码继续改。正式项目应该重建可读、可维护的工程。
 
-- `src/reference/postProcessing.ts`
-  - 原版式 composer、LUT、depth outline、props 材质。
+### 2. 南京内容单独成层
 
-- `src/reference/sceneDepthPass.ts`
-  - 给水和后处理使用的深度目标。
+南京相关内容应该有自己的数据和资产边界：
 
-- `src/reference/loadGeometry.ts`
-  - Draco / batched geometry 加载。
+- 地点列表
+- 建筑和街巷模型
+- 场景触发区
+- 音乐和环境声触发
+- NPC 与信件内容
+- 剧情阶段和时间变化
 
-- `src/reference/shaders/`
-  - 从原版参考工程迁移出来的 shader。
+这些内容不应该直接写死在渲染入口里。
 
-原版参考工程的组织方式是：
+### 3. 游戏逻辑不要和资产管线混在一起
 
-```text
-MessengerScene.svelte
-  -> createGameplaySceneGroup(renderer)
-    -> load textures
-    -> create terrain / water / tree leaves / props
-    -> return bundle
-  -> createMessengerComposer(renderer, scene, camera, lut)
-  -> render loop:
-    -> update controls/materials
-    -> render depth pass without water
-    -> composer.render()
-```
+模型转换、压缩、风格化、贴图处理属于工具链；玩家移动、相机、对白、送信任务属于游戏逻辑。两者应分开。
 
-这说明我们后面不要把南京场景写成一个大文件，而应该做成类似 `createNanjingSceneGroup(renderer)` 的 bundle。
+## 推荐目录形态
 
-## 2. 南京内容层：`src/nanjing/`
-
-这一层只放南京相关内容。
-
-重点文件：
-
-- `src/nanjing/stagePrototype.ts`
-  - 当前南京 GLB + 临时地面原型。
-  - 这是过渡文件，不是最终架构，也不是最终美术方向。
-
-- `src/nanjing/buildingCollider.ts`
-  - 建筑碰撞系统。
-  - 当前能收集建筑碰撞体，但还没有真正接进玩家移动逻辑。
-
-- `src/nanjing/landmarkModel.ts`
-  - 把 GLB 模型贴到球面上的变换工具。
-  - 负责统一 toon 材质。
-
-- `src/nanjing/regions.ts`
-  - 南京地点锚点、任务目标、可选原版 props / landmark 加载。
-
-南京模型资产位置：
+如果后续另起正式工程，可以使用类似结构：
 
 ```text
-ditumoxing/                         # 原始下载白模，不直接进游戏
-public/models/nanjing/              # 南京模型工作区
-public/models/nanjing/optimized/    # 游戏优先使用的优化 GLB
-scripts/                            # DAE/OBJ/GLB 转换与风格化脚本
+game/
+  package.json
+  src/
+    app/              # 入口、渲染循环、全局状态
+    game/             # 玩家、相机、任务、交互、存档
+    reference/        # 从原版总结出的可复用渲染方法，不放原版压缩源码
+    nanjing/          # 南京地点、场景、建筑摆放、触发区
+    narrative/        # 信件、对白、故事阶段、选择
+    audio/            # 音乐、环境声、语音触发逻辑
+  public/
+    models/
+    textures/
+    audio/
+tools/
+  asset-pipeline/     # 模型转换、压缩、检查脚本
+docs/
+  story/
+  audio/
+  art-direction/
+  technical-notes/
 ```
 
-## 3. 游戏逻辑层：`src/game/`
+如果坚持在当前仓库里开发，也应该先做一次明确的结构调整，例如把原站快照移动到 `reference/messenger-static/`，再新增 `game/`。不要让正式源码和当前根目录的原站快照长期混在同一层。
 
-这一层是实际游戏逻辑。
+## 建议分层
 
-重点文件：
+### Reference Layer
 
-- `src/game/main.ts`
-  - 当前游戏装配入口。
-  - 现在仍加载 `createNanjingStagePrototype()`，只是为了保持项目可运行。
+职责：记录和复刻原版 Messenger 的“方法”，不是复制原版压缩代码。
 
-- `src/game/player.ts`
-  - 球面移动、跳跃、输入。
+应该沉淀：
 
-- `src/game/camera.ts`
-  - 跟随相机。
+- 地形块加载方式
+- 水面材质思路
+- toon / outline / LUT 的整体观感
+- 镜头跟随和角色比例
+- 小世界尺度
 
-- `src/game/npc.ts`
-  - NPC 加载、标记、名牌。
+输出应该是我们自己的、可读的模块，而不是继续修改原版打包产物。
 
-- `src/game/quest.ts`
-  - 送信任务状态机。
+### Nanjing Content Layer
 
-- `src/game/interaction.ts`
-  - 交互与对话触发。
+职责：管理南京场景内容。
 
-- `src/game/ui/`
-  - 对话框和 HUD。
+应该包含：
 
-- `src/game/data/`
-  - NPC 和任务数据。
+- 地点 ID，例如 `mochou_road`、`qinhuai_boat`、`pukou_station`
+- 场景范围和触发区
+- 建筑模型引用
+- NPC 出现条件
+- 信件送达点
+- 音乐和环境声标签
 
-## 4. 下一步接入方案
+这一层决定“玩家走到哪里，看见什么，听见什么，遇见谁”。
 
-不要继续扩大 `stagePrototype.ts`。
+### Narrative Layer
 
-建议下一步做：
+职责：管理故事。
 
-```text
-src/nanjing/createNanjingScene.ts
-```
+应该包含：
 
-让它像原版参考的 `createGameplaySceneGroup()` 一样返回：
+- 每封信的正文
+- 送达前后的对白
+- 角色关系
+- 故事阶段
+- 玩家选择
+- 主线彩蛋
 
-```ts
-type NanjingSceneBundle = {
-  group: THREE.Group;
-  landmarkGroup: THREE.Group;
-  colliders: THREE.Mesh[];
-  update(elapsed: number): void;
-};
-```
+注意：我们已经确定故事不是每条都要完整结局。主角负责把信送到、把阶段见证完，而不是替所有爱情盖棺定论。
 
-然后 `src/game/main.ts` 只负责：
+### Game Logic Layer
 
-- 创建 renderer / scene / camera。
-- 调用南京 scene bundle。
-- 接入玩家、NPC、任务、HUD。
-- 每帧调用 `bundle.update(time)`。
-- 把 `BuildingCollider.testMove()` 接进 `player.update()` 的移动结果。
+职责：处理玩家实际游玩。
 
-这样原版风格、南京模型、游戏逻辑就不会继续缠在一起。
+应该包含：
+
+- 玩家移动
+- 镜头
+- 交互判定
+- 任务状态
+- 对话框
+- 地图提示
+- 存档
+
+这一层不应该知道模型怎么从 DAE 转成 GLB，也不应该直接关心某个建筑原始文件来自哪里。
+
+### Asset Pipeline Layer
+
+职责：把原始素材变成游戏可用素材。
+
+应该包含：
+
+- 模型格式转换
+- 面数检查和压缩
+- 贴图尺寸检查
+- 命名规范检查
+- 运行时资源清单生成
+
+这一层可以使用 Blender、glTF 工具或其他脚本，但输出结果必须进入明确的游戏资源目录。
+
+## 第一阶段建议
+
+不要一上来做整座南京。
+
+第一阶段只做一个高质量垂直切片：
+
+- 一个地点：莫愁路
+- 一封主线信
+- 一段可走的街
+- 一个可进入的情绪阶段
+- 一套音乐和环境声
+- 一个让玩家相信“这个游戏真的成立”的画面
+
+当莫愁路成立后，再扩展秦淮河、颐和路、浦口火车站、老门东、南艺后街、朝天宫和莫愁湖。
+
+## 当前仓库的角色
+
+当前仓库不要再承担正式工程职责。
+
+它应该继续作为：
+
+- 原版 Messenger 的参考快照
+- 《南都爱情故事》的前期文档仓库
+- 后续正式工程的设计依据
+
+这样我们下一次开始写代码时，就不会再次被旧实验、临时模型和错误方向拖乱。

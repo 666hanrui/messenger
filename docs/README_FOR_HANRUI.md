@@ -1,65 +1,72 @@
-# 当前项目目录地图
+# 当前仓库地图
 
-这个工作区现在同时放了原版参考、南京项目、临时实验和模型原始文件，所以看起来很乱。先按下面找。
+这个仓库现在已经清理成一个单一用途的参考仓库：保留原版 Messenger 的静态快照，同时保存《南都爱情故事》的策划和正文文档。
 
-## 你主要要看的项目
+它不再是那个混着实验工程、南京模型、Vite 服务和临时舞台的目录。
+
+## 根目录
+
+- `index.html`  
+  原版 Messenger 静态快照入口。
+
+- `assets/`  
+  原版 Messenger 运行需要的静态资源，包括打包后的 JS、Draco 几何、纹理、字体、音频、worker 和支持库。
+
+- `robots.txt`  
+  原站保留下来的 robots/content-signal 文件。
+
+- `44bdbdb0-b663-47c1-95f5-14066afccd72`  
+  原站抓取时保留下来的资源文件。
+
+- `README.md`  
+  给 GitHub 首页看的仓库说明。
+
+## 文档目录
+
+- `docs/nanjing-slow-mail-concept.md`  
+  早期“南京慢递”方向概念文档。现在项目名已经确定为《南都爱情故事》，但这份文档仍然保留了最初的题材来源和设计思路。
+
+- `docs/nandu-love-story-draft.md`  
+  已经通过的正文草稿。后续继续写故事时，应该优先续写或整理到这里。
+
+- `docs/audio-scene-generation-plan.md`  
+  场景音乐、环境声、音效、语音和触发方式规划。
+
+- `docs/project-architecture.md`  
+  未来正式工程的分层建议。注意：这是未来方案，不代表当前仓库里已经有这些源码目录。
+
+- `docs/original-site-capture.md`  
+  原版 Messenger 抓取和本地运行记录。
+
+- `docs/assets/nanjing-slow-mail-style-anchor.png`  
+  风格参考图。
+
+## 本地运行原站
+
+在仓库根目录运行：
+
+```bash
+python3 -m http.server 3001 --bind 127.0.0.1
+```
+
+然后打开：
+
+```text
+http://127.0.0.1:3001/
+```
+
+## 不要再找这些目录
+
+下面这些是之前混乱阶段出现过的东西，现在不属于这个仓库：
 
 - `messager/`
-  - 当前《南都爱情故事》主工程。
-  - 现在 `http://127.0.0.1:5173/` 跑的就是这里。
-  - 源码现在按 `src/game/`、`src/reference/`、`src/nanjing/` 三层拆开。
-
-## 原版 / 参考
-
-- `messenger.abeto.co/`
-  - 从原始网站扒下来的静态资源和打包产物。
-  - 适合用来对照原版资产、bundle、图片、声音、几何体文件。
-
 - `messenger-copy/`
-  - 更接近“研究原版怎么做”的 Svelte/Three 参考工程。
-  - 重点看：`messenger-copy/src/lib/messenger/`
-  - 里面有原版场景拆解、terrain、水、材质、后处理、Draco 加载等代码。
-
-## 南京模型资产
-
-- `messager/ditumoxing/`
-  - 你下载的原始白模包、zip、dae、skp 等。
-  - 这是素材源头，不建议直接在游戏里加载。
-
-- `messager/public/models/nanjing/`
-  - 南京模型工作目录。
-  - `optimized/` 里是已经转换压缩后的 GLB，游戏应该优先加载这里。
-
-- `messager/scripts/`
-  - 模型转换和风格化脚本。
-  - 目前包括 DAE/OBJ/GLB 相关脚本。
-
-## 文档
-
-- `messager/docs/nandu-love-story-draft.md`
-  - 已通过的故事正文。
-
-- `messager/docs/audio-scene-generation-plan.md`
-  - 场景、音乐、语音、音效的生成规划。
-
-- `messager/walkthrough.md`
-  - 我补上的当前技术现场说明。
-
-- `messager/docs/project-architecture.md`
-  - 当前源码分层说明和下一步接入方案。
-
-## 当前混乱点
-
-- `messager/src/nanjing/stagePrototype.ts`
-  - 这是我前面错误方向造成的临时舞台文件，后来又被塞进了 GLB 加载。
-  - 它现在是“混合实验状态”，不是最终正确架构。
-
-- `messager/dist/`
-  - 构建产物，可重新生成，不要当源码看。
-
 - `jiewang/`
-  - 早期几何克隆项目，不是现在要继续做的主项目。
+- `src/`
+- `public/models/nanjing/`
+- `ditumoxing/`
+- `node_modules/`
+- `vite.config.ts`
+- `mochou-road.html`
 
-## 当前结论
-
-你刚才在浏览器看到的 `5173` 画面，确实不是你要验收的正确方向。它只是当前 `messager` 入口加载了混合实验舞台后的结果。
+如果后面重新开始做正式游戏，建议新建干净工程，不要直接把实验代码塞回这个原站快照根目录。

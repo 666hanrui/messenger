@@ -17,7 +17,7 @@ robots.txt
 本地验证方式：
 
 ```bash
-cd /Users/hanrui/messenger
+cd /path/to/this/repository
 python3 -m http.server 3001 --bind 127.0.0.1
 ```
 
