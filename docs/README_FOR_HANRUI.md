@@ -36,6 +36,23 @@
 - `nandu-love-story/README.md`  
   项目简介、边界和后续工程方向。
 
+- `nandu-love-story/docs/`  
+  项目前期文档、正文、音频规划和未来工程分层建议。
+
+当前文档：
+
+- `nandu-love-story/docs/nanjing-slow-mail-concept.md`  
+  早期“南京慢递”方向概念文档。
+
+- `nandu-love-story/docs/nandu-love-story-draft.md`  
+  已经通过的正文草稿。
+
+- `nandu-love-story/docs/audio-scene-generation-plan.md`  
+  场景音乐、环境声、音效、语音和触发方式规划。
+
+- `nandu-love-story/docs/project-architecture.md`  
+  未来正式工程的分层建议。
+
 后续正式开发时，源码、素材、脚本和项目文档都应该优先放在这里，而不是塞进仓库根目录。
 
 推荐后续结构：
@@ -50,27 +67,18 @@ nandu-love-story/
 
 ---
 
-## 历史文档目录
+## 根 docs 目录
 
-当前 `docs/` 仍保留历史整理文档，后续应逐步迁入 `nandu-love-story/docs/`。
+当前根部 `docs/` 只保留仓库级说明和原版 Messenger 抓取记录。
 
-- `docs/nanjing-slow-mail-concept.md`  
-  早期“南京慢递”方向概念文档。现在项目名已经确定为《南都爱情故事》，但这份文档仍然保留了最初的题材来源和设计思路。
-
-- `docs/nandu-love-story-draft.md`  
-  已经通过的正文草稿。后续继续写故事时，应该优先续写或整理到 `nandu-love-story/` 中。
-
-- `docs/audio-scene-generation-plan.md`  
-  场景音乐、环境声、音效、语音和触发方式规划。
-
-- `docs/project-architecture.md`  
-  未来正式工程的分层建议。注意：这是未来方案，不代表当前仓库里已经有这些源码目录。
+- `docs/README_FOR_HANRUI.md`  
+  当前仓库地图。
 
 - `docs/original-site-capture.md`  
   原版 Messenger 抓取和本地运行记录。
 
 - `docs/assets/nanjing-slow-mail-style-anchor.png`  
-  风格参考图。
+  风格参考图。后续如果确定属于《南都爱情故事》正式资料，可以再迁入 `nandu-love-story/docs/assets/`。
 
 ---
 
