@@ -10,23 +10,21 @@
 - 未来工程分层建议
 - 视觉风格参考
 
-## 当前已迁入
+## 当前文档
+
+- `nanjing-slow-mail-concept.md`  
+  早期“南京慢递”方向概念文档。项目后续已经改名为《南都爱情故事》，但这份文档保留了最初的题材来源和设计思路。
 
 - `nandu-love-story-draft.md`  
   已经通过的正文草稿。
 
-## 待迁入 / 历史位置
+- `audio-scene-generation-plan.md`  
+  场景音乐、环境声、音效、语音和触发方式规划。
 
-下面这些文件当前仍位于仓库根部的 `docs/` 目录，后续应逐步迁入本目录：
+- `project-architecture.md`  
+  未来正式工程的分层建议。
 
-```text
-docs/nanjing-slow-mail-concept.md
-docs/audio-scene-generation-plan.md
-docs/project-architecture.md
-docs/assets/nanjing-slow-mail-style-anchor.png
-```
-
-## 使用原则
+## 后续建议
 
 后续凡是属于《南都爱情故事》的原创内容，都应优先放入：
 
