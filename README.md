@@ -51,6 +51,12 @@ nandu-love-story/
 
 它不是 Messenger 的换皮，也不直接使用原版资产作为正式发布内容。项目方向是：以旧南京为舞台，玩家扮演年轻邮差，在晨昏流转中送出一封封“有情之书”，见证那些慢慢说出口、慢慢错过、慢慢抵达的爱。
 
+当前文档位于：
+
+```text
+nandu-love-story/docs/
+```
+
 当前阶段：
 
 - 前期概念
@@ -72,11 +78,23 @@ nandu-love-story/
 
 ## 文档说明
 
-当前仓库里仍保留 `docs/` 作为历史整理目录。后续与《南都爱情故事》强相关的文档，应逐步迁入：
+- `nandu-love-story/docs/nanjing-slow-mail-concept.md`  
+  早期概念文档。
 
-```text
-nandu-love-story/docs/
-```
+- `nandu-love-story/docs/nandu-love-story-draft.md`  
+  正文草稿。
+
+- `nandu-love-story/docs/audio-scene-generation-plan.md`  
+  音频与场景规划。
+
+- `nandu-love-story/docs/project-architecture.md`  
+  未来工程结构建议。
+
+- `docs/original-site-capture.md`  
+  原版 Messenger 抓取和本地运行记录。
+
+- `docs/README_FOR_HANRUI.md`  
+  当前仓库地图。
 
 ---
 
