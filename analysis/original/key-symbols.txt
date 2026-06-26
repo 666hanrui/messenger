@@ -1,0 +1,1971 @@
+861:    (remove_effect_dom(r.nodes_start, r.nodes_end), (i = !0)),
+863:    remove_reactions(r, 0),
+881:function remove_effect_dom(r, e) {
+884:    (r.remove(), (r = i));
+1064:      if ((remove_reactions(r, skipped_deps), x !== null && skipped_deps > 0))
+1078:        (remove_reactions(r, skipped_deps), (x.length = skipped_deps));
+1112:function remove_reaction(r, e) {
+1127:    remove_reactions(e, 0));
+1129:function remove_reactions(r, e) {
+1131:  if (i !== null) for (var s = e; s < i.length; s++) remove_reaction(r, i[s]);
+1269:    p !== null && (p.lastChild.remove(), s.before(p), (p = null));
+1530:  removeEventListener(e, i) {
+1908:function setQuaternionFromProperEuler(r, e, i, s, a) {
+1940:        "THREE.MathUtils: .setQuaternionFromProperEuler() encountered an unknown order: " +
+2007:  setQuaternionFromProperEuler,
+2243:class Quaternion {
+2245:    ((this.isQuaternion = !0),
+2292:  static multiplyQuaternionsFlat(e, i, s, a, o, l) {
+2408:          "THREE.Quaternion: .setFromEuler() encountered an unknown order: " +
+2538:    return this.multiplyQuaternions(this, e);
+2541:    return this.multiplyQuaternions(e, this);
+2543:  multiplyQuaternions(e, i) {
+2605:  slerpQuaternions(e, i, s) {
+2669:class Vector3 {
+2671:    ((Vector3.prototype.isVector3 = !0),
+2782:    return this.applyQuaternion(_quaternion$4.setFromEuler(e));
+2785:    return this.applyQuaternion(_quaternion$4.setFromAxisAngle(e, i));
+2815:  applyQuaternion(e) {
+3100:const _vector$c = new Vector3(),
+3101:  _quaternion$4 = new Quaternion();
+3652:const _tempVec3 = new Vector3();
+3789:      (a && s && a.isVector3 && s.isVector3) ||
+4045:  setAxisAngleFromQuaternion(e) {
+4460:    e = new Vector3(1 / 0, 1 / 0, 1 / 0),
+4461:    i = new Vector3(-1 / 0, -1 / 0, -1 / 0),
+4591:  intersectsSphere(e) {
+4665:  getBoundingSphere(e) {
+4713:    new Vector3(),
+4714:    new Vector3(),
+4715:    new Vector3(),
+4716:    new Vector3(),
+4717:    new Vector3(),
+4718:    new Vector3(),
+4719:    new Vector3(),
+4720:    new Vector3(),
+4722:  _vector$b = new Vector3(),
+4724:  _v0$2$1 = new Vector3(),
+4725:  _v1$7$1 = new Vector3(),
+4726:  _v2$4$1 = new Vector3(),
+4727:  _f0 = new Vector3(),
+4728:  _f1 = new Vector3(),
+4729:  _f2 = new Vector3(),
+4730:  _center = new Vector3(),
+4731:  _extents = new Vector3(),
+4732:  _triangleNormal = new Vector3(),
+4733:  _testAxis = new Vector3();
+4749:  _v1$6$1 = new Vector3(),
+4750:  _v2$3$1 = new Vector3();
+4751:class Sphere {
+4752:  constructor(e = new Vector3(), i = -1) {
+4753:    ((this.isSphere = !0), (this.center = e), (this.radius = i));
+4781:  intersectsSphere(e) {
+4786:    return e.intersectsSphere(this);
+4852:const _vector$a = new Vector3(),
+4853:  _segCenter = new Vector3(),
+4854:  _segDir = new Vector3(),
+4855:  _diff = new Vector3(),
+4856:  _edge1 = new Vector3(),
+4857:  _edge2 = new Vector3(),
+4858:  _normal$1 = new Vector3();
+4860:  constructor(e = new Vector3(), i = new Vector3(0, 0, -1)) {
+4944:  intersectSphere(e, i) {
+4955:  intersectsSphere(e) {
+5286:  makeRotationFromQuaternion(e) {
+5470:      e.isVector3
+5636:      e.isVector3
+5870:const _v1$5$1 = new Vector3(),
+5872:  _zero = new Vector3(0, 0, 0),
+5873:  _one = new Vector3(1, 1, 1),
+5874:  _x = new Vector3(),
+5875:  _y = new Vector3(),
+5876:  _z = new Vector3(),
+5878:  _quaternion$3 = new Quaternion();
+5990:  setFromQuaternion(e, i, s) {
+5992:      _matrix$2.makeRotationFromQuaternion(e),
+5996:  setFromVector3(e, i = this._order) {
+6002:      this.setFromQuaternion(_quaternion$3, e)
+6071:const _v1$4$1 = new Vector3(),
+6072:  _q1$2 = new Quaternion(),
+6074:  _target = new Vector3(),
+6075:  _position$3 = new Vector3(),
+6076:  _scale$2 = new Vector3(),
+6077:  _quaternion$2 = new Quaternion(),
+6078:  _xAxis = new Vector3(1, 0, 0),
+6079:  _yAxis = new Vector3(0, 1, 0),
+6080:  _zAxis = new Vector3(0, 0, 1),
+6082:  _removedEvent = { type: "removed" },
+6084:  _childremovedEvent = { type: "childremoved", child: null };
+6096:    const e = new Vector3(),
+6098:      s = new Quaternion(),
+6099:      a = new Vector3(1, 1, 1);
+6104:      i.setFromQuaternion(s, void 0, !1);
+6141:  applyQuaternion(e) {
+6153:  setRotationFromQuaternion(e) {
+6181:      _v1$4$1.copy(e).applyQuaternion(this.quaternion),
+6205:    e.isVector3 ? _target.copy(e) : _target.set(e, i, s);
+6209:      this.isCamera || this.isLight
+6230:          ? (e.removeFromParent(),
+6243:  remove(e) {
+6245:      for (let s = 0; s < arguments.length; s++) this.remove(arguments[s]);
+6253:        e.dispatchEvent(_removedEvent),
+6254:        (_childremovedEvent.child = e),
+6255:        this.dispatchEvent(_childremovedEvent),
+6256:        (_childremovedEvent.child = null)),
+6260:  removeFromParent() {
+6262:    return (e !== null && e.remove(this), this);
+6265:    return this.remove(...this.children);
+6275:      e.removeFromParent(),
+6312:  getWorldQuaternion(e) {
+6432:          boundingSphere: c.boundingSphere ? c.boundingSphere.toJSON() : void 0,
+6448:        this.boundingSphere !== null &&
+6449:          (a.boundingSphere = this.boundingSphere.toJSON()),
+6456:      (this.background &&
+6457:        (this.background.isColor
+6458:          ? (a.background = this.background.toJSON())
+6459:          : this.background.isTexture &&
+6460:            (a.background = this.background.toJSON(e).uuid)),
+6565:Object3D.DEFAULT_UP = new Vector3(0, 1, 0);
+6568:const _v0$1$1 = new Vector3(),
+6569:  _v1$3$1 = new Vector3(),
+6570:  _v2$2$1 = new Vector3(),
+6571:  _v3$2 = new Vector3(),
+6572:  _vab = new Vector3(),
+6573:  _vac = new Vector3(),
+6574:  _vbc = new Vector3(),
+6575:  _vap = new Vector3(),
+6576:  _vbp = new Vector3(),
+6577:  _vcp = new Vector3(),
+6582:  constructor(e = new Vector3(), i = new Vector3(), s = new Vector3()) {
+7199:  setFromVector3(e) {
+7324:          : a && a.isVector3 && s && s.isVector3
+7678:const _vector$9 = new Vector3(),
+7901:  _offset = new Vector3(),
+7904:  _vector$8 = new Vector3();
+7920:      (this.boundingSphere = null),
+7976:      this.boundingSphere !== null && this.computeBoundingSphere(),
+7980:  applyQuaternion(e) {
+7982:      _m1$3.makeRotationFromQuaternion(e),
+8051:          new Vector3(-1 / 0, -1 / 0, -1 / 0),
+8052:          new Vector3(1 / 0, 1 / 0, 1 / 0),
+8078:  computeBoundingSphere() {
+8079:    this.boundingSphere === null && (this.boundingSphere = new Sphere());
+8084:        "THREE.BufferGeometry.computeBoundingSphere(): GLBufferAttribute requires a manual bounding sphere.",
+8087:        this.boundingSphere.set(new Vector3(), 1 / 0));
+8091:      const s = this.boundingSphere.center;
+8118:      ((this.boundingSphere.radius = Math.sqrt(a)),
+8119:        isNaN(this.boundingSphere.radius) &&
+8121:            'THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN. The "position" attribute is likely to have NaN values.',
+8152:      ((c[H] = new Vector3()), (h[H] = new Vector3()));
+8153:    const d = new Vector3(),
+8154:      p = new Vector3(),
+8155:      f = new Vector3(),
+8159:      T = new Vector3(),
+8160:      M = new Vector3();
+8198:    const R = new Vector3(),
+8199:      P = new Vector3(),
+8200:      U = new Vector3(),
+8201:      O = new Vector3();
+8228:      const a = new Vector3(),
+8229:        o = new Vector3(),
+8230:        l = new Vector3(),
+8231:        c = new Vector3(),
+8232:        h = new Vector3(),
+8233:        d = new Vector3(),
+8234:        p = new Vector3(),
+8235:        f = new Vector3();
+8375:    const c = this.boundingSphere;
+8376:    return (c !== null && (e.data.boundingSphere = c.toJSON()), e);
+8387:      (this.boundingSphere = null));
+8412:    const h = e.boundingSphere;
+8414:      h !== null && (this.boundingSphere = h.clone()),
+8427:  _sphere$6 = new Sphere(),
+8428:  _sphereHitAt = new Vector3(),
+8429:  _vA$1 = new Vector3(),
+8430:  _vB$1 = new Vector3(),
+8431:  _vC$1 = new Vector3(),
+8432:  _tempA = new Vector3(),
+8433:  _morphA = new Vector3(),
+8434:  _intersectionPoint$1 = new Vector3(),
+8435:  _intersectionPointWorld = new Vector3();
+8507:      (s.boundingSphere === null && s.computeBoundingSphere(),
+8508:      _sphere$6.copy(s.boundingSphere),
+8513:        (_ray$3.intersectSphere(_sphere$6, _sphereHitAt) === null ||
+8630:    const f = new Vector3();
+8657:          new Vector3(),
+8660:    const _ = { a: c, b: h, c: d, normal: new Vector3(), materialIndex: 0 };
+8707:      const Ie = new Vector3();
+8765:        a.isVector3 ||
+8768:        a.isQuaternion)
+8867:            : l && l.isVector3
+8887:class Camera extends Object3D {
+8890:      (this.isCamera = !0),
+8891:      (this.type = "Camera"),
+8926:const _v3$1 = new Vector3(),
+8929:class PerspectiveCamera extends Camera {
+8932:      (this.isPerspectiveCamera = !0),
+8933:      (this.type = "PerspectiveCamera"),
+9063:class CubeCamera extends Object3D {
+9066:      (this.type = "CubeCamera"),
+9070:    const a = new PerspectiveCamera(fov, aspect, e, i);
+9072:    const o = new PerspectiveCamera(fov, aspect, e, i);
+9074:    const l = new PerspectiveCamera(fov, aspect, e, i);
+9076:    const c = new PerspectiveCamera(fov, aspect, e, i);
+9078:    const h = new PerspectiveCamera(fov, aspect, e, i);
+9080:    const d = new PerspectiveCamera(fov, aspect, e, i);
+9087:    for (const d of i) this.remove(d);
+9116:        "THREE.CubeCamera.updateCoordinateSystem(): Invalid coordinate system: " +
+9235:      new CubeCamera(1, 10, this).update(e, l),
+9253:const _moveEvent = { type: "move" };
+9276:        (this._targetRay.linearVelocity = new Vector3()),
+9278:        (this._targetRay.angularVelocity = new Vector3())),
+9289:        (this._grip.linearVelocity = new Vector3()),
+9291:        (this._grip.angularVelocity = new Vector3())),
+9390:          this.dispatchEvent(_moveEvent)));
+9415:      (this.background = null),
+9418:      (this.backgroundBlurriness = 0),
+9419:      (this.backgroundIntensity = 1),
+9420:      (this.backgroundRotation = new Euler()),
+9432:      e.background !== null && (this.background = e.background.clone()),
+9435:      (this.backgroundBlurriness = e.backgroundBlurriness),
+9436:      (this.backgroundIntensity = e.backgroundIntensity),
+9437:      this.backgroundRotation.copy(e.backgroundRotation),
+9450:      this.backgroundBlurriness > 0 &&
+9451:        (i.object.backgroundBlurriness = this.backgroundBlurriness),
+9452:      this.backgroundIntensity !== 1 &&
+9453:        (i.object.backgroundIntensity = this.backgroundIntensity),
+9454:      (i.object.backgroundRotation = this.backgroundRotation.toArray()),
+9537:const _vector$7 = new Vector3();
+9729:const _basePosition = new Vector3(),
+9732:  _vector3 = new Vector3(),
+9734:  _vertex = new Vector3(),
+9735:  _sphere$5 = new Sphere(),
+9747:      (this.boundingSphere = null));
+9758:  computeBoundingSphere() {
+9760:    (this.boundingSphere === null && (this.boundingSphere = new Sphere()),
+9761:      this.boundingSphere.makeEmpty());
+9765:        this.boundingSphere.expandByPoint(_vertex));
+9775:      e.boundingSphere !== null &&
+9776:        (this.boundingSphere = e.boundingSphere.clone()),
+9784:      (this.boundingSphere === null && this.computeBoundingSphere(),
+9785:      _sphere$5.copy(this.boundingSphere),
+9787:      e.ray.intersectsSphere(_sphere$5) !== !1 &&
+10024:  _sphere$4 = new Sphere();
+10037:      (this.boundingSphere = null));
+10051:  computeBoundingSphere() {
+10054:    (this.boundingSphere === null && (this.boundingSphere = new Sphere()),
+10055:      e.boundingSphere === null && e.computeBoundingSphere(),
+10056:      this.boundingSphere.makeEmpty());
+10059:        _sphere$4.copy(e.boundingSphere).applyMatrix4(_instanceLocalMatrix),
+10060:        this.boundingSphere.union(_sphere$4));
+10071:      e.boundingSphere !== null &&
+10072:        (this.boundingSphere = e.boundingSphere.clone()),
+10096:        (this.boundingSphere === null && this.computeBoundingSphere(),
+10097:        _sphere$4.copy(this.boundingSphere),
+10099:        e.ray.intersectsSphere(_sphere$4) !== !1))
+10149:const _vector1 = new Vector3(),
+10150:  _vector2 = new Vector3(),
+10153:  constructor(e = new Vector3(1, 0, 0), i = 0) {
+10185:  distanceToSphere(e) {
+10207:  intersectsSphere(e) {
+10229:const _sphere$3 = new Sphere(),
+10231:  _vector$6 = new Vector3();
+10303:    if (e.boundingSphere !== void 0)
+10304:      (e.boundingSphere === null && e.computeBoundingSphere(),
+10305:        _sphere$3.copy(e.boundingSphere).applyMatrix4(e.matrixWorld));
+10308:      (i.boundingSphere === null && i.computeBoundingSphere(),
+10309:        _sphere$3.copy(i.boundingSphere).applyMatrix4(e.matrixWorld));
+10311:    return this.intersectsSphere(_sphere$3);
+10319:      this.intersectsSphere(_sphere$3)
+10322:  intersectsSphere(e) {
+10359:    if (!i.isArrayCamera || i.cameras.length === 0) return !1;
+10360:    for (let s = 0; s < i.cameras.length; s++) {
+10361:      const a = i.cameras[s];
+10379:    if (!i || !i.cameras || i.cameras.length === 0) return !1;
+10380:    for (let s = 0; s < i.cameras.length; s++) {
+10381:      const a = i.cameras[s];
+10398:  intersectsSphere(e, i) {
+10399:    if (!i || !i.cameras || i.cameras.length === 0) return !1;
+10400:    for (let s = 0; s < i.cameras.length; s++) {
+10401:      const a = i.cameras[s];
+10412:        _frustum$1.intersectsSphere(e))
+10419:    if (!i || !i.cameras || i.cameras.length === 0) return !1;
+10420:    for (let s = 0; s < i.cameras.length; s++) {
+10421:      const a = i.cameras[s];
+10439:    if (!i || !i.cameras || i.cameras.length === 0) return !1;
+10440:    for (let s = 0; s < i.cameras.length; s++) {
+10441:      const a = i.cameras[s];
+10497:  _sphere$2 = new Sphere(),
+10498:  _vector$5 = new Vector3(),
+10499:  _forward$1 = new Vector3(),
+10500:  _temp = new Vector3(),
+10533:      (this.boundingSphere = null),
+10659:  computeBoundingSphere() {
+10660:    this.boundingSphere === null && (this.boundingSphere = new Sphere());
+10661:    const e = this.boundingSphere,
+10668:        this.getBoundingSphereAt(o, _sphere$2).applyMatrix4(_matrix$1),
+10706:        boundingSphere: null,
+10781:      (c.boundingSphere = null),
+10782:      i.boundingSphere !== null &&
+10783:        (c.boundingSphere = i.boundingSphere.clone()),
+10873:  getBoundingSphereAt(e, i) {
+10877:    if (a.boundingSphere === null) {
+10878:      const o = new Sphere();
+10889:      ((o.radius = Math.sqrt(h)), (a.boundingSphere = o));
+10891:    return (i.copy(a.boundingSphere), i);
+11025:      _mesh$2.geometry.boundingSphere === null &&
+11026:        (_mesh$2.geometry.boundingSphere = new Sphere()));
+11034:        this.getBoundingSphereAt(d, _mesh$2.geometry.boundingSphere),
+11055:      (this.boundingSphere =
+11056:        e.boundingSphere !== null ? e.boundingSphere.clone() : null),
+11060:        boundingSphere:
+11061:          i.boundingSphere !== null ? i.boundingSphere.clone() : null,
+11113:      T = s.isArrayCamera ? _frustumArray : _frustum$2;
+11115:      !s.isArrayCamera &&
+11136:            this.getBoundingSphereAt(U, _sphere$2).applyMatrix4(_matrix$1));
+11138:          if ((_ && (O = !T.intersectsSphere(_sphere$2, s)), !O)) {
+11162:              this.getBoundingSphereAt(R, _sphere$2).applyMatrix4(_matrix$1),
+11163:              (P = !T.intersectsSphere(_sphere$2, s))),
+11204:const _vStart = new Vector3(),
+11205:  _vEnd = new Vector3(),
+11208:  _sphere$1 = new Sphere(),
+11209:  _intersectPointOnRay = new Vector3(),
+11210:  _intersectPointOnSegment = new Vector3();
+11255:      (s.boundingSphere === null && s.computeBoundingSphere(),
+11256:      _sphere$1.copy(s.boundingSphere),
+11259:      e.ray.intersectsSphere(_sphere$1) === !1)
+11339:const _start = new Vector3(),
+11340:  _end = new Vector3();
+11396:  _sphere$7 = new Sphere(),
+11397:  _position$2 = new Vector3();
+11425:      (s.boundingSphere === null && s.computeBoundingSphere(),
+11426:      _sphere$7.copy(s.boundingSphere),
+11429:      e.ray.intersectsSphere(_sphere$7) === !1)
+11473:    const h = new Vector3();
+11679:      h = i || (l.isVector2 ? new Vector2() : new Vector3());
+11687:    const s = new Vector3(),
+11691:      c = new Vector3(),
+11695:      a[x] = this.getTangentAt(b, new Vector3());
+11697:    ((o[0] = new Vector3()), (l[0] = new Vector3()));
+11871:const tmp = new Vector3(),
+11885:  getPoint(e, i = new Vector3()) {
+11955:      this.points.push(new Vector3().fromArray(a));
+12073:    e = new Vector3(),
+12074:    i = new Vector3(),
+12075:    s = new Vector3(),
+12076:    a = new Vector3(),
+12086:  getPoint(e, i = new Vector3()) {
+12175:  constructor(e = new Vector3(), i = new Vector3()) {
+12182:  getPoint(e, i = new Vector3()) {
+12194:  getTangent(e, i = new Vector3()) {
+12267:  constructor(e = new Vector3(), i = new Vector3(), s = new Vector3()) {
+12275:  getPoint(e, i = new Vector3()) {
+12499:    this.moveTo(e[0].x, e[0].y);
+12503:  moveTo(e, i) {
+12640:  return (o && equals(o, o.next) && (removeNode(o), (o = o.next)), o);
+12652:      if ((removeNode(i), (i = e = i.prev), i === i.next)) break;
+12666:      (e.push(h.i, r.i, d.i), removeNode(r), (r = d.next), (c = d.next));
+12791:      (e.push(s.i, i.i, a.i), removeNode(i), removeNode(i.next), (i = r = a)),
+13061:function removeNode(r) {
+13106:    (removeDupEndPts(e), addContour(s, e));
+13108:    i.forEach(removeDupEndPts);
+13116:function removeDupEndPts(r) {
+13181:class SphereGeometry extends BufferGeometry {
+13192:      (this.type = "SphereGeometry"),
+13207:      f = new Vector3(),
+13208:      _ = new Vector3(),
+13255:    return new SphereGeometry(
+14037:class QuaternionLinearInterpolant extends Interpolant {
+14048:      Quaternion.slerpFlat(o, 0, l, d - c, l, d, h);
+14052:class QuaternionKeyframeTrack extends KeyframeTrack {
+14057:    return new QuaternionLinearInterpolant(
+14065:QuaternionKeyframeTrack.prototype.ValueTypeName = "quaternion";
+14066:QuaternionKeyframeTrack.prototype.InterpolantFactoryMethodSmooth = void 0;
+14171:        "THREE.AnimationClip: parseAnimation() is deprecated and will be removed with r185",
+14217:            s(QuaternionKeyframeTrack, x + ".quaternion", _, "rot", a),
+14273:      return QuaternionKeyframeTrack;
+14304:  remove: function (r) {
+14344:      (this.removeHandler = function (p) {
+14592:      (p(), a && a(f), Cache.remove(`image:${e}`));
+14601:      (c.removeEventListener("load", h, !1),
+14602:        c.removeEventListener("error", d, !1));
+14661:      this.groundColor !== void 0 &&
+14662:        (i.object.groundColor = this.groundColor.getHex()),
+14674:  _lightPositionWorld$1 = new Vector3(),
+14675:  _lookTarget$1 = new Vector3();
+14678:    ((this.camera = e),
+14703:    const i = this.camera,
+14735:      (this.camera = e.camera.clone()),
+14759:      (e.camera = this.camera.toJSON(!1).object),
+14760:      delete e.camera.matrix,
+14767:    (super(new PerspectiveCamera(50, 1, 0.5, 500)),
+14773:    const i = this.camera,
+14823:  _lightPositionWorld = new Vector3(),
+14824:  _lookTarget = new Vector3();
+14827:    (super(new PerspectiveCamera(90, 1, 0.5, 500)),
+14840:        new Vector3(1, 0, 0),
+14841:        new Vector3(-1, 0, 0),
+14842:        new Vector3(0, 0, 1),
+14843:        new Vector3(0, 0, -1),
+14844:        new Vector3(0, 1, 0),
+14845:        new Vector3(0, -1, 0),
+14848:        new Vector3(0, 1, 0),
+14849:        new Vector3(0, 1, 0),
+14850:        new Vector3(0, 1, 0),
+14851:        new Vector3(0, 1, 0),
+14852:        new Vector3(0, 0, 1),
+14853:        new Vector3(0, 0, -1),
+14857:    const s = this.camera,
+14912:class OrthographicCamera extends Camera {
+14915:      (this.isOrthographicCamera = !0),
+14916:      (this.type = "OrthographicCamera"),
+15011:    (super(new OrthographicCamera(-5, 5, 5, -5, 0.5, 500)),
+15176:    const _ = e.data.boundingSphere;
+15178:      _ !== void 0 && (l.boundingSphere = new Sphere().fromJSON(_)),
+15258:          Cache.remove(`image-bitmap:${e}`),
+15285:class ArrayCamera extends PerspectiveCamera {
+15288:      (this.isArrayCamera = !0),
+15289:      (this.isMultiViewCamera = !1),
+15290:      (this.cameras = e));
+15325:const _position$1 = new Vector3(),
+15326:  _quaternion$1 = new Quaternion(),
+15327:  _scale$1 = new Vector3(),
+15328:  _forward$2 = new Vector3(),
+15329:  _up$1 = new Vector3();
+15344:  removeFilter() {
+15384:      _forward$2.set(0, 0, -1).applyQuaternion(_quaternion$1),
+15385:      _up$1.set(0, 1, 0).applyQuaternion(_quaternion$1),
+15664:const _position = new Vector3(),
+15665:  _quaternion$5 = new Quaternion(),
+15666:  _scale = new Vector3(),
+15667:  _orientation = new Vector3();
+15723:      _orientation.set(0, 0, 1).applyQuaternion(_quaternion$5));
+15746:          (l = this._setAdditiveIdentityQuaternion),
+15836:  _setAdditiveIdentityQuaternion() {
+15850:    Quaternion.slerpFlat(e, i, e, i, e, s, a);
+15854:    (Quaternion.multiplyQuaternionsFlat(e, l, e, i, e, s),
+15855:      Quaternion.slerpFlat(e, i, e, i, e, l, a));
+16674:  _removeInactiveAction(e) {
+16693:      this._removeInactiveBindingsForAction(e));
+16695:  _removeInactiveBindingsForAction(e) {
+16699:      --o.referenceCount === 0 && this._removeInactiveBinding(o);
+16725:  _removeInactiveBinding(e) {
+16850:          this._removeInactiveBindingsForAction(d));
+16862:        (this._deactivateAction(h), this._removeInactiveAction(h));
+16869:        (c.restoreOriginalState(), this._removeInactiveBinding(c));
+16874:    s !== null && (this._deactivateAction(s), this._removeInactiveAction(s));
+16900:  remove(e) {
+16928:class Raycaster {
+16933:      (this.camera = null),
+16946:  setFromCamera(e, i) {
+16947:    i.isPerspectiveCamera
+16954:        (this.camera = i))
+16955:      : i.isOrthographicCamera
+16960:          (this.camera = i))
+16961:        : console.error("THREE.Raycaster: Unsupported camera type: " + i.type);
+17010:  setFromVector3(e) {
+17131:const _startP = new Vector3(),
+17132:  _startEnd = new Vector3(),
+17133:  _d1 = new Vector3(),
+17134:  _d2 = new Vector3(),
+17135:  _r = new Vector3(),
+17136:  _c1 = new Vector3(),
+17137:  _c2 = new Vector3();
+17139:  constructor(e = new Vector3(), i = new Vector3()) {
+17224:  moveTo(e, i) {
+17228:      this.currentPath.moveTo(e, i),
+17564:  return { get: a, remove: o, update: l };
+18103:		vec3 cameraToFrag;
+18105:			cameraToFrag = normalize( vec3( - viewMatrix[ 0 ][ 2 ], - viewMatrix[ 1 ][ 2 ], - viewMatrix[ 2 ][ 2 ] ) );
+18107:			cameraToFrag = normalize( vWorldPosition - cameraPosition );
+18111:			vec3 reflectVec = reflect( cameraToFrag, worldNormal );
+18113:			vec3 reflectVec = refract( cameraToFrag, worldNormal, refractionRatio );
+18170:		vec3 cameraToVertex;
+18172:			cameraToVertex = normalize( vec3( - viewMatrix[ 0 ][ 2 ], - viewMatrix[ 1 ][ 2 ], - viewMatrix[ 2 ][ 2 ] ) );
+18174:			cameraToVertex = normalize( worldPosition.xyz - cameraPosition );
+18178:			vReflect = reflect( cameraToVertex, worldNormal );
+18180:			vReflect = refract( cameraToVertex, worldNormal, refractionRatio );
+18350:		vec3 groundColor;
+18356:		vec3 irradiance = mix( hemiLight.groundColor, hemiLight.skyColor, hemiDiffuseWeight );
+18650:float LTC_ClippedSphereFormFactor( const in vec3 f ) {
+18686:	float result = LTC_ClippedSphereFormFactor( vectorFormFactor );
+18853:		directLight.color *= ( directLight.visible && receiveShadow ) ? getPointShadow( pointShadowMap[ i ], pointLightShadow.shadowMapSize, pointLightShadow.shadowIntensity, pointLightShadow.shadowBias, pointLightShadow.shadowRadius, vPointShadowCoord[ i ], pointLightShadow.shadowCameraNear, pointLightShadow.shadowCameraFar ) : 1.0;
+19340:			float shadowCameraNear;
+19341:			float shadowCameraFar;
+19468:	float getPointShadow( sampler2D shadowMap, vec2 shadowMapSize, float shadowIntensity, float shadowBias, float shadowRadius, vec4 shadowCoord, float shadowCameraNear, float shadowCameraFar ) {
+19473:		if ( lightToPositionLength - shadowCameraFar <= 0.0 && lightToPositionLength - shadowCameraNear >= 0.0 ) {
+19474:			float dp = ( lightToPositionLength - shadowCameraNear ) / ( shadowCameraFar - shadowCameraNear );			dp += shadowBias;
+19533:			float shadowCameraNear;
+19534:			float shadowCameraFar;
+19598:		shadow *= receiveShadow ? getPointShadow( pointShadowMap[ i ], pointLight.shadowMapSize, pointLight.shadowIntensity, pointLight.shadowBias, pointLight.shadowRadius, vPointShadowCoord[ i ], pointLight.shadowCameraNear, pointLight.shadowCameraFar ) : 1.0;
+19772:	vec3 v = normalize( cameraPosition - pos );
+20163:uniform float backgroundIntensity;
+20170:	texColor.rgb *= backgroundIntensity;
+20189:uniform float backgroundBlurriness;
+20190:uniform float backgroundIntensity;
+20191:uniform mat3 backgroundRotation;
+20196:		vec4 texColor = textureCube( envMap, backgroundRotation * vec3( flipEnvMap * vWorldDirection.x, vWorldDirection.yz ) );
+20198:		vec4 texColor = textureCubeUV( envMap, backgroundRotation * vWorldDirection, backgroundBlurriness );
+20202:	texColor.rgb *= backgroundIntensity;
+21354:    background_vert: vertex$h,
+21355:    background_frag: fragment$h,
+21356:    backgroundCube_vert: vertex$g,
+21357:    backgroundCube_frag: fragment$g,
+21512:          shadowCameraNear: {},
+21513:          shadowCameraFar: {},
+21520:        properties: { direction: {}, skyColor: {}, groundColor: {} },
+21700:    background: {
+21704:        backgroundIntensity: { value: 1 },
+21706:      vertexShader: ShaderChunk.background_vert,
+21707:      fragmentShader: ShaderChunk.background_frag,
+21709:    backgroundCube: {
+21713:        backgroundBlurriness: { value: 0 },
+21714:        backgroundIntensity: { value: 1 },
+21715:        backgroundRotation: { value: new Matrix3() },
+21717:      vertexShader: ShaderChunk.backgroundCube_vert,
+21718:      fragmentShader: ShaderChunk.backgroundCube_frag,
+21739:          referencePosition: { value: new Vector3() },
+21813:function WebGLBackground(r, e, i, s, a, o, l) {
+21822:    let P = R.isScene === !0 ? R.background : null;
+21824:      P && P.isTexture && (P = (R.backgroundBlurriness > 0 ? i : e).get(P)),
+21849:              name: "BackgroundCubeMaterial",
+21850:              uniforms: cloneUniforms(ShaderLib.backgroundCube.uniforms),
+21851:              vertexShader: ShaderLib.backgroundCube.vertexShader,
+21852:              fragmentShader: ShaderLib.backgroundCube.fragmentShader,
+21871:        _e1$1.copy(P.backgroundRotation),
+21881:        (p.material.uniforms.backgroundBlurriness.value =
+21882:          P.backgroundBlurriness),
+21883:        (p.material.uniforms.backgroundIntensity.value = P.backgroundIntensity),
+21884:        p.material.uniforms.backgroundRotation.value.setFromMatrix4(
+21902:              name: "BackgroundMaterial",
+21903:              uniforms: cloneUniforms(ShaderLib.background.uniforms),
+21904:              vertexShader: ShaderLib.background.vertexShader,
+21905:              fragmentShader: ShaderLib.background.fragmentShader,
+21921:        (d.material.uniforms.backgroundIntensity.value = P.backgroundIntensity),
+22454:    c.removeEventListener("dispose", a);
+22466:  _flatCamera = new OrthographicCamera(),
+22475:    new Vector3(-PHI, INV_PHI, 0),
+22476:    new Vector3(PHI, INV_PHI, 0),
+22477:    new Vector3(-INV_PHI, 0, PHI),
+22478:    new Vector3(INV_PHI, 0, PHI),
+22479:    new Vector3(0, PHI, -INV_PHI),
+22480:    new Vector3(0, PHI, INV_PHI),
+22481:    new Vector3(-1, 1, -1),
+22482:    new Vector3(1, 1, -1),
+22483:    new Vector3(-1, 1, 1),
+22484:    new Vector3(1, 1, 1),
+22486:  _origin = new Vector3();
+22614:    this._renderer.compile(i, _flatCamera);
+22617:    const h = new PerspectiveCamera(90, 1, i, s),
+22629:        name: "PMREM.Background",
+22636:    const D = e.background;
+22638:      ? D.isColor && (T.color.copy(D), (e.background = null), (w = !0))
+22663:      (e.background = D));
+22684:      s.render(l, _flatCamera));
+22747:      h.render(f, _flatCamera));
+22826:    a = new Vector3(0, 1, 0);
+23071:    h.removeEventListener("dispose", o);
+23141:    _.index !== null && e.remove(_.index);
+23142:    for (const b in _.attributes) e.remove(_.attributes[b]);
+23143:    (_.removeEventListener("dispose", l), delete a[_.id]);
+23145:    (x && (e.remove(x), o.delete(_)),
+23192:    (w && e.remove(w), o.set(f, M));
+23294:        (N.dispose(), s.delete(c), c.removeEventListener("dispose", F));
+23385:    (d.removeEventListener("dispose", c),
+23386:      i.remove(d.instanceMatrix),
+23387:      d.instanceColor !== null && i.remove(d.instanceColor));
+24012:const _v0$m = new Vector3();
+24377:        "uniform vec3 cameraPosition;",
+24488:        "uniform vec3 cameraPosition;",
+24667:  remove(e) {
+25112:    h.remove(F);
+25146:  return { has: e, get: i, remove: s, update: a, dispose: o };
+25274:          i = { direction: new Vector3(), color: new Color() };
+25278:            position: new Vector3(),
+25279:            direction: new Vector3(),
+25289:            position: new Vector3(),
+25297:            direction: new Vector3(),
+25299:            groundColor: new Color(),
+25305:            position: new Vector3(),
+25306:            halfWidth: new Vector3(),
+25307:            halfHeight: new Vector3(),
+25347:            shadowCameraNear: 1,
+25348:            shadowCameraFar: 1e3,
+25404:  for (let d = 0; d < 9; d++) s.probe.push(new Vector3());
+25405:  const a = new Vector3(),
+25506:            (ee.shadowCameraNear = he.camera.near),
+25507:            (ee.shadowCameraFar = he.camera.far),
+25517:          re.groundColor.copy(W.groundColor).multiplyScalar(Z),
+25629:    ((d.camera = p), (i.length = 0), (s.length = 0));
+25646:    camera: null,
+25799:          ee.camera.updateProjectionMatrix());
+25809:          P(N, H, ee.camera, he, this.type));
+25920:    O.target.removeEventListener("dispose", U);
+26758:    (G.removeEventListener("dispose", O),
+26764:    (G.removeEventListener("dispose", N), k(G));
+26777:    s.remove(K);
+26789:      (K.depthTexture && (K.depthTexture.dispose(), s.remove(K.depthTexture)),
+26821:        s.remove(fe[Re]));
+26823:    s.remove(K);
+27809:            Re.removeEventListener("dispose", Ve));
+28428:      const i = e.cameras[0].viewport,
+28474:    const F = new PerspectiveCamera();
+28476:    const k = new PerspectiveCamera();
+28479:      $ = new ArrayCamera();
+28482:    ((this.cameraAutoUpdate = !0),
+28515:      (a.removeEventListener("select", se),
+28516:        a.removeEventListener("selectstart", se),
+28517:        a.removeEventListener("selectend", se),
+28518:        a.removeEventListener("squeeze", se),
+28519:        a.removeEventListener("squeezestart", se),
+28520:        a.removeEventListener("squeezeend", se),
+28521:        a.removeEventListener("end", re),
+28522:        a.removeEventListener("inputsourceschange", he));
+28670:      for (let V = 0; V < z.removed.length; V++) {
+28671:        const _e = z.removed[V],
+28693:    const ee = new Vector3(),
+28694:      Ie = new Vector3();
+28738:    this.updateCamera = function (z) {
+28755:        pe = $.cameras;
+28773:        z.isPerspectiveCamera &&
+28778:    ((this.getCamera = function () {
+28795:      (this.getCameraTexture = function (z) {
+28806:        _e.length !== $.cameras.length && (($.cameras.length = 0), (Le = !0));
+28824:            ((Oe = new PerspectiveCamera()),
+28836:            Le === !0 && $.cameras.push(Oe));
+28849:        if (pe && pe.includes("camera-access") && T) {
+28852:            const De = _e[j].camera;
+28856:              const Oe = f.getCameraImage(De);
+29097:      (M.nearDistance.value = D.shadow.camera.near),
+29098:      (M.farDistance.value = D.shadow.camera.far));
+29237:          : D.isVector3 || D.isColor
+29258:    R.removeEventListener("dispose", M);
+29338:      _e = new Vector3(),
+29341:        background: null,
+29431:        (ft = new WebGLBackground(P, vt, St, Be, fe, x, h)),
+29592:        (i.removeEventListener("webglcontextlost", je, !1),
+29593:          i.removeEventListener("webglcontextrestored", rt, !1),
+29594:          i.removeEventListener("webglcontextcreationerror", Ke, !1),
+29606:          Ne.removeEventListener("sessionstart", Bi),
+29607:          Ne.removeEventListener("sessionend", $a),
+29637:      (me.removeEventListener("dispose", ke), ct(me));
+29640:      (wt(q), Y.remove(q));
+29700:            "THREE.WebGLRenderer: renderMultiDrawInstances has been deprecated and will be removed in r184. Append to renderMultiDraw arguments and use indirection.",
+29815:        if (me !== void 0 && me.isCamera !== !0) {
+29817:            "THREE.WebGLRenderer.render: camera is not an instance of THREE.Camera.",
+29829:            (Ne.cameraAutoUpdate === !0 && Ne.updateCamera(me),
+29830:            (me = Ne.getCamera())),
+29867:        if ((w.setupLights(), me.isArrayCamera)) {
+29868:          const et = me.cameras;
+29893:              ne === !0 && tt.setGlobalState(P.clippingPlanes, w.state.camera))
+29919:              (q.boundingSphere !== void 0
+29920:                ? (q.boundingSphere === null && q.computeBoundingSphere(),
+29921:                  Le.copy(q.boundingSphere.center))
+29922:                : (at.boundingSphere === null && at.computeBoundingSphere(),
+29923:                  Le.copy(at.boundingSphere.center)),
+30241:        const ti = kt.map.cameraPosition;
+30256:            kt.setValue(j, "isOrthographic", q.isOrthographicCamera === !0),
+30885:              switch ((M.once && this.removeListener(d, M.fn, void 0, !0), w)) {
+30907:                  (M[R].once && this.removeListener(d, M[R].fn, void 0, !0), w)
+30936:          (c.prototype.removeListener = function (d, p, f, _) {
+30958:          (c.prototype.removeAllListeners = function (d) {
+30967:          (c.prototype.off = c.prototype.removeListener),
+31154:function removeFromIdle(r) {
+31202:        (removeFromIdle(i), e(r == null ? void 0 : r()));
+31212:          (removeFromIdle(c), (o = !0), s());
+31338:  remove(e) {
+31345:  removeCb(e) {
+31352:  removeAll() {
+31384:                        a in e._from && s._removeProp(a);
+31482:    return L(this, Ri) ? this : (ze(this, Ri, !0), t$1.remove(this), this);
+31501:      L(this, gn) === 1 && t$1.remove(this),
+31632:                Y === 0 ? ne.moveTo(z.x, z.y) : ne.lineTo(z.x, z.y),
+31740:                Y === 0 ? ne.moveTo(z.x, z.y) : ne.lineTo(z.x, z.y),
+31925:        st.moveTo(ne + V, z),
+31966:        (_e === 0 ? V.moveTo(st, j) : V.lineTo(st, j), _e++);
+31982:        (_e === 0 ? V.moveTo(st, j) : V.lineTo(st, j), _e++);
+32020:        Le.moveTo(ne, z),
+32361:          Pe = new Vector3(Fe * j, Fe * De, 0),
+32362:          Oe = new Vector3(-st * De, st * j, 0),
+32381:              const { x: Ge, y: ce } = new Vector3(
+32482:      Te = new Vector3(),
+33245:  _removeProp(i) {
+33377:      (o.style.background = "#fff"),
+33408:          Object.keys(r).length > 0 ? update(r) : localStorage.removeItem(key),
+33576:    (window.removeEventListener("resize", L(this, Wi)),
+33577:      window.removeEventListener("orientationchange", L(this, Wi)),
+33578:      document.removeEventListener(
+33582:      window.removeEventListener("focus", this.boundFocusChange),
+33583:      window.removeEventListener("blur", this.boundFocusChange),
+33587:          .removeEventListener("change", this.boundDarkModeChange));
+33672:      events$1.emit(`${this.eventID}_move`, this),
+33756:      L(this, Ht).addEventListener("pointermove", this.boundTouchesMove),
+33768:    (L(this, Ht).removeEventListener("pointerdown", this.boundTouchesStart),
+33769:      L(this, Ht).removeEventListener("pointermove", this.boundTouchesMove),
+33770:      L(this, Ht).removeEventListener("pointerup", this.boundTouchesEnd),
+33771:      L(this, Ht).removeEventListener("pointerout", this.boundTouchesEnd),
+33772:      L(this, Ht).removeEventListener("pointercancel", this.boundTouchesEnd),
+33773:      L(this, Ht).removeEventListener("contextmenu", this.boundPreventDefault),
+33774:      L(this, Ht).removeEventListener(
+33778:      document.removeEventListener("dblclick", this.boundPreventDefault),
+33866:      document.body.removeEventListener("click", L(this, qi)),
+33946:    constructor({ camera: e = null, volume: i = 1, muted: s = !0 } = {}) {
+34082:    removeFilter() {
+34083:      L(this, Yt).removeFilter();
+34101:          (L(this, $i) && L(this, $i).remove(L(this, Yt)),
+34304:    (L(this, An).removeEventListener("wheel", this.boundWheel),
+34422:          : this._callBack(this._onMove, "move", s, a, e))
+34448:          e.addEventListener("pointermove", this._touchMoveCbs[i]),
+34466:        e.removeEventListener("pointerdown", this._touchStartCbs[i]),
+34469:        e.removeEventListener("pointerover", this._touchMoveCbs[i]),
+34472:        e.removeEventListener("pointermove", this._touchMoveCbs[i]),
+34475:        (e.removeEventListener("pointerup", this._touchEndCbs[i]),
+34476:          e.removeEventListener("pointerout", this._touchEndCbs[i]),
+34477:          e.removeEventListener("pointercancel", this._touchEndCbs[i]));
+34480:        e.removeEventListener("touchstart", L(this, Vs)),
+34497:const _sphere = new Sphere(),
+34503:    camera: i = null,
+34518:    if (!i) throw new Error("mesh interaction needs a camera");
+34520:      (this._camera = i),
+34537:      (this._raycaster = new Raycaster()),
+34549:      (this._raycaster.setFromCamera(e.position11, this._camera),
+34559:      l = a ? "Sphere" : "Box",
+34621:            : this._callBack(this._onMove, "move", i));
+34661:        events$1.on(`${this._eventsID}_move`, this._onTouchMove, this),
+34673:      events$1.off(`${this._eventsID}_move`, this._onTouchMove, this),
+34688:  _raycaster = new Raycaster(),
+34689:  _v1$f = new Vector3(),
+34690:  _v2$4 = new Vector3();
+34693:    camera: e = null,
+34694:    normal: i = new Vector3(0, 0, -1),
+34697:    ((this._camera = e), (this._plane = new Plane(i, s)));
+34701:      _raycaster.setFromCamera(e, this._camera),
+34715:      _v1$f.project(this._camera),
+34726:      _v1$f.copy(this._camera.position).sub(e).normalize(),
+34731:  setPlaneFromCameraTarget() {
+34732:    return this.setPlaneFromPoint(this._camera.target);
+34734:  setPlaneFromCameraTargetAndDistance(e) {
+34736:      _v1$f.copy(this._camera.position).sub(this._camera.target).normalize(),
+34737:      _v2$4.copy(_v1$f).negate().multiplyScalar(e).add(this._camera.position),
+34756:  setCamera(e) {
+34757:    return ((this._camera = e), this);
+34760:    return this.setPlaneFromCameraTarget().getTouchPositionOnPlane(e);
+34763:    return this.setPlaneFromCameraTarget().getPointPositionOnPlane(e);
+34766:    return this.setPlaneFromCameraTargetAndDistance(e).getTouchPositionOnPlane(
+34774:const _v0$l = new Vector3(),
+34775:  _v1$e = new Vector3();
+35006:          (c.boundingSphere = new Sphere()),
+35007:          c.boundingSphere.center.fromArray(l.boundingSphere.center),
+35008:          (c.boundingSphere.radius = l.boundingSphere.radius)),
+35270:    l.uAnimInfo = { value: new Vector3(e.fps, e.frames, c), ignore: !0 };
+35302:        h.push(new Vector3(c[f * 3 + 0], c[f * 3 + 1], c[f * 3 + 2]));
+35406:  _v1$d = new Vector3(),
+35407:  _q1$1 = new Quaternion(),
+35408:  _q2 = new Quaternion(),
+35409:  _qCam = new Quaternion(),
+35410:  _qIdentity = new Quaternion();
+35436:    (this._object.isCamera && _qCam.identity(),
+35441:          !(this._object.isCamera && l === "scale")
+35457:                this._object.isCamera
+35462:              this._object[this._object.isCamera ? "basePosition" : "position"]
+35468:      this._object.isCamera &&
+35472:          .applyQuaternion(_qCam)
+35474:        this._object.baseUp.set(0, 1, 0).applyQuaternion(_qCam)));
+35479:      this._object.isCamera &&
+35504:const _v0$k = new Vector3(),
+35505:  _q0$4 = new Quaternion();
+35533:      const _ = h[f].size === 4 ? QuaternionKeyframeTrack : VectorKeyframeTrack;
+36869:            (s.removeEventListener("canplaythrough", h),
+36870:              s.removeEventListener("error", d));
+37477:    remove: function (e) {
+37480:    removeAll: function () {
+38082:              M = new Vector3(),
+38083:              w = new Quaternion(),
+38084:              D = new Vector3(1, 1, 1),
+38266:const _quaternion = new Quaternion();
+38267:class GLTFCubicSplineQuaternionInterpolant extends GLTFCubicSplineInterpolant {
+38501:      (this.cameraCache = { refs: {}, uses: {} }),
+38538:    (this.cache.removeAll(),
+38552:            s.getDependencies("camera"),
+38560:            cameras: l[2],
+38593:        l.camera !== void 0 && this._addNodeRef(this.cameraCache, l.camera));
+38676:        case "camera":
+38677:          a = this.loadCamera(i);
+39188:  loadCamera(e) {
+39190:    const s = this.json.cameras[e],
+39193:      console.warn("THREE.GLTFLoader: Missing camera parameters.");
+39198:        ? (i = new PerspectiveCamera(
+39205:          (i = new OrthographicCamera(
+39357:      o.camera !== void 0 &&
+39359:          a.getDependency("camera", o.camera).then(function (d) {
+39360:            return a._getNodeRef(a.cameraCache, o.camera, d);
+39449:        d = QuaternionKeyframeTrack;
+39494:        this instanceof QuaternionKeyframeTrack
+39495:          ? GLTFCubicSplineQuaternionInterpolant
+39511:        (a.set(new Vector3(h[0], h[1], h[2]), new Vector3(d[0], d[1], d[2])),
+39528:    const c = new Vector3(),
+39529:      h = new Vector3();
+39558:  const l = new Sphere();
+39561:    (r.boundingSphere = l));
+39612:new Vector3();
+39613:new Vector3();
+39615:new Vector3();
+39616:new Vector3();
+39617:new Vector3();
+39620:new Vector3();
+39624:    Ye(this, "camera", new OrthographicCamera(-1, 1, 1, -1, 0, 1));
+39635:    e.render(this.mesh, this.camera);
+39649:new Vector3();
+39651:new Vector3();
+39676:    (e = L(this, js)) == null || e.remove();
+39695:const _camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
+39718:    e.render(this._mesh, _camera);
+39731:      (this.camera = i),
+39756:      e.render(this.scene, this.camera),
+39775:    (window.removeEventListener("keydown", this.boundKeyDown),
+39776:      window.removeEventListener("keyup", this.boundKeyUp));
+39965:const _forward = new Vector3(),
+39966:  _right = new Vector3(),
+39967:  _up = new Vector3(),
+39968:  _v0$j = new Vector3(),
+39977:function baseCamera(r) {
+39979:    i = e === CAMERA_TYPE.PERSPECTIVE ? PerspectiveCamera : OrthographicCamera;
+39992:        (this.isBaseCamera = !0),
+39996:        (this._prevPosition = new Vector3()),
+39997:        (this._prevTarget = new Vector3()),
+39998:        (this._prevUp = new Vector3()),
+40004:        (this.target = new Vector3()),
+40005:        (this.basePosition = new Vector3(0, 0, BASE_Z)),
+40006:        (this.baseTarget = new Vector3()),
+40007:        (this.baseUp = new Vector3(0, 1, 0)),
+40016:        (this.shake = new Vector3()),
+40017:        (this.shakeSpeed = new Vector3(1, 1, 1)),
+40165:        if ((this._prevSize.copy(this._size), this.isPerspectiveCamera))
+40183:function baseCamera$1(r = "perspective") {
+40184:  const e = baseCamera(r);
+40200:  _v0$i = new Vector3(),
+40202:function orbitCamera(r) {
+40206:        (this.isOrbitCamera = !0),
+40241:        (this.minPanPosition = new Vector3().setScalar(-1 / 0)),
+40242:        (this.maxPanPosition = new Vector3().setScalar(1 / 0)),
+40246:        (this._panDelta = new Vector3()),
+40247:        (this._panTarget = new Vector3()),
+40260:      this._sphericalTarget.setFromVector3(
+40281:        const o = this.isOrthographicCamera
+40295:                _pi.setCamera(this).unprojectPoint(_v1$c),
+40349:        this.isOrthographicCamera &&
+40385:      this.isPerspectiveCamera
+40396:        this.isPerspectiveCamera)
+40575:function orbitCamera$1(r = "perspective") {
+40576:  const e = baseCamera(r),
+40577:    i = orbitCamera(e);
+40628:      this.webgl.render(i, new OrthographicCamera(-1, 1, 1, -1, 0, 1)));
+40651:    customCamera: e = null,
+40653:    cameraType: s = "perspective",
+40656:    const a = e || (i ? orbitCamera$1 : baseCamera$1);
+40657:    ((this.camera = a(s)),
+40681:          (i.boundingSphere === null
+40682:            ? (s = i.computeBoundingSphere) == null || s.call(i)
+40683:            : ((a = i.geometry) == null ? void 0 : a.boundingSphere) === null &&
+40684:              ((l = (o = i.geometry).computeBoundingSphere) == null ||
+40710:      webglRenderer.webgl.compile(this, this.camera),
+40719:      webglRenderer.webgl.render(this, this.camera),
+40745:        (this.camera._resize(),
+40746:        this.camera._update(),
+40747:        this.camera.updateMatrixWorld(),
+40754:      this.camera &&
+40755:        ((i = (e = this.camera).dispose) == null || i.call(e),
+40756:        (this.camera = null)),
+40877:        (this.camera = i),
+40898:        e.render(this.scene, this.camera),
+40901:        e.render(this.scene, this.camera),
+40967:    removePass(e) {
+41064:        l.camera &&
+41065:        (this.addPass(new RenderPass$1(l, l.camera)), (l.composer = this)));
+41073:      (i = e.scene) != null && i.camera && (e.scene.composer = this),
+41117:          : document.removeEventListener("visibilitychange", this),
+41175:    constructor(e = "Pass", i = new Scene(), s = new Camera()) {
+41179:        (this.camera = s),
+41196:    set mainCamera(e) {}
+41328:        r.render(this.scene, this.camera));
+41393:    set mainCamera(r) {
+41394:      this.camera = r;
+41421:        h = this.camera,
+41524:          (s.removeChild(i.domElement), s.appendChild(r.domElement)),
+41573:    setMainCamera(r) {
+41574:      for (const e of this.passes) e.mainCamera = r;
+41598:    removePass(r) {
+41615:    removeAllPasses() {
+42342:    set mainCamera(r) {}
+42559:        l = this.camera,
+42760:        r.render(this.scene, this.camera));
+42897:      const { scene: o, camera: l } = this,
+43045:      return (console.warn(this.name, "distinction was removed"), 1);
+43048:      console.warn(this.name, "distinction was removed");
+43213:uniform float focusDistance;uniform float focusRange;uniform float cameraNear;uniform float cameraFar;varying vec2 vUv;float readDepth(const in vec2 uv){
+43220:float d=pow(2.0,depth*log2(cameraFar+1.0))-1.0;float a=cameraFar/(cameraFar-cameraNear);float b=cameraFar*cameraNear/(cameraNear-cameraFar);depth=a+b/d;
+43224:float viewZ=perspectiveDepthToViewZ(depth,cameraNear,cameraFar);float linearDepth=viewZToOrthographicDepth(viewZ,cameraNear,cameraFar);
+43238:          cameraNear: new Uniform(0.3),
+43239:          cameraFar: new Uniform(1e3),
+43249:        this.copyCameraSettings(r));
+43252:      return this.uniforms.cameraNear.value;
+43255:      return this.uniforms.cameraFar.value;
+43308:    adoptCameraSettings(r) {
+43309:      this.copyCameraSettings(r);
+43311:    copyCameraSettings(r) {
+43313:        ((this.uniforms.cameraNear.value = r.near),
+43314:        (this.uniforms.cameraFar.value = r.far),
+43315:        r instanceof PerspectiveCamera
+43452:        r.render(this.scene, this.camera));
+43501:        (this.camera = r),
+43559:    set mainCamera(r) {
+43560:      ((this.camera = r), this.cocMaterial.copyCameraSettings(r));
+43613:      const e = this.camera,
+43732:uniform sampler2D inputBuffer;uniform vec2 cameraNearFar;float getViewZ(const in float depth){
+43734:return perspectiveDepthToViewZ(depth,cameraNearFar.x,cameraNearFar.y);
+43736:return orthographicDepthToViewZ(depth,cameraNearFar.x,cameraNearFar.y);
+43744:float d=pow(2.0,depth.x*log2(cameraNearFar.y+1.0))-1.0;float a=cameraNearFar.y/(cameraNearFar.y-cameraNearFar.x);float b=cameraNearFar.y*cameraNearFar.x/(cameraNearFar.x-cameraNearFar.y);depth.x=a+b/d;
+43752:float d=pow(2.0,depth.y*log2(cameraNearFar.y+1.0))-1.0;float a=cameraNearFar.y/(cameraNearFar.y-cameraNearFar.x);float b=cameraNearFar.y*cameraNearFar.x/(cameraNearFar.x-cameraNearFar.y);depth.y=a+b/d;
+43757:depth.x=viewZToOrthographicDepth(getViewZ(depth.x),cameraNearFar.x,cameraNearFar.y);depth.y=viewZToOrthographicDepth(getViewZ(depth.y),cameraNearFar.x,cameraNearFar.y);
+43781:          cameraNearFar: new Uniform(new Vector2(1, 1)),
+43885:    adoptCameraSettings(r) {
+43886:      this.copyCameraSettings(r);
+43888:    copyCameraSettings(r) {
+43890:        (this.uniforms.cameraNearFar.value.set(r.near, r.far),
+43891:        r instanceof PerspectiveCamera
+44027:        (this.ignoreBackground = !1),
+44034:    set mainCamera(r) {
+44035:      this.camera = r;
+44073:    isBackgroundDisabled() {
+44074:      return this.ignoreBackground;
+44076:    setBackgroundDisabled(r) {
+44077:      this.ignoreBackground = r;
+44090:        l = this.camera,
+44093:        d = o.background,
+44098:        (this.ignoreBackground || this.clearPass.overrideClearColor !== null) &&
+44099:          (o.background = null),
+44106:        (o.background = d),
+44116:  v = new Vector3(),
+44144:        (this.camera = r),
+44166:        M.copyCameraSettings(r),
+44182:    set mainCamera(r) {
+44183:      ((this.camera = r),
+44184:        (this.renderPassLight.mainCamera = r),
+44185:        this.depthMaskMaterial.copyCameraSettings(r));
+44280:        v.setFromMatrixPosition(s.matrixWorld).project(this.camera),
+44349:      ((h.skipShadowMapUpdate = !0), (h.ignoreBackground = !0));
+44368:    set mainCamera(r) {
+44369:      this.renderPass.mainCamera = r;
+44399:        (this.camera = e),
+44405:      (s.copyCameraSettings(e),
+44415:        (this._ignoreBackground = !1));
+44420:    set mainCamera(r) {
+44421:      ((this.camera = r),
+44422:        (this.depthPass.mainCamera = r),
+44423:        this.depthMaskMaterial.copyCameraSettings(r));
+44444:    get ignoreBackground() {
+44445:      return this._ignoreBackground;
+44447:    set ignoreBackground(r) {
+44448:      ((this._ignoreBackground = r),
+44453:    isBackgroundDisabled() {
+44454:      return this.ignoreBackground;
+44456:    setBackgroundDisabled(r) {
+44457:      this.ignoreBackground = r;
+44464:      const s = this.camera,
+44468:      if (this.ignoreBackground || !o || a.size > 0) {
+44702:uniform lowp sampler2D areaTexture;uniform lowp sampler2D searchTexture;uniform vec2 texelSize;uniform vec2 resolution;varying vec2 vUv;varying vec4 vOffset[3];varying vec2 vPixCoord;void movec(const in bvec2 c,inout vec2 variable,const in vec2 value){if(c.x){variable.x=value.x;}if(c.y){variable.y=value.y;}}void movec(const in bvec4 c,inout vec4 variable,const in vec4 value){movec(c.xy,variable.xy,value.xy);movec(c.zw,variable.zw,value.zw);}vec2 decodeDiagBilinearAccess(in vec2 e){e.r=e.r*abs(5.0*e.r-5.0*0.75);return round(e);}vec4 decodeDiagBilinearAccess(in vec4 e){e.rb=e.rb*abs(5.0*e.rb-5.0*0.75);return round(e);}vec2 searchDiag1(const in vec2 texCoord,const in vec2 dir,out vec2 e){vec4 coord=vec4(texCoord,-1.0,1.0);vec3 t=vec3(texelSize,1.0);for(int i=0;i<MAX_SEARCH_STEPS_INT;++i){if(!(coord.z<float(MAX_SEARCH_STEPS_DIAG_INT-1)&&coord.w>0.9)){break;}coord.xyz=t*vec3(dir,1.0)+coord.xyz;e=texture2D(inputBuffer,coord.xy).rg;coord.w=dot(e,vec2(0.5));}return coord.zw;}vec2 searchDiag2(const in vec2 texCoord,const in vec2 dir,out vec2 e){vec4 coord=vec4(texCoord,-1.0,1.0);coord.x+=0.25*texelSize.x;vec3 t=vec3(texelSize,1.0);for(int i=0;i<MAX_SEARCH_STEPS_INT;++i){if(!(coord.z<float(MAX_SEARCH_STEPS_DIAG_INT-1)&&coord.w>0.9)){break;}coord.xyz=t*vec3(dir,1.0)+coord.xyz;e=texture2D(inputBuffer,coord.xy).rg;e=decodeDiagBilinearAccess(e);coord.w=dot(e,vec2(0.5));}return coord.zw;}vec2 areaDiag(const in vec2 dist,const in vec2 e,const in float offset){vec2 texCoord=vec2(AREATEX_MAX_DISTANCE_DIAG,AREATEX_MAX_DISTANCE_DIAG)*e+dist;texCoord=AREATEX_PIXEL_SIZE*texCoord+0.5*AREATEX_PIXEL_SIZE;texCoord.x+=0.5;texCoord.y+=AREATEX_SUBTEX_SIZE*offset;return texture2D(areaTexture,texCoord).rg;}vec2 calculateDiagWeights(const in vec2 texCoord,const in vec2 e,const in vec4 subsampleIndices){vec2 weights=vec2(0.0);vec4 d;vec2 end;if(e.r>0.0){d.xz=searchDiag1(texCoord,vec2(-1.0,1.0),end);d.x+=float(end.y>0.9);}else{d.xz=vec2(0.0);}d.yw=searchDiag1(texCoord,vec2(1.0,-1.0),end);if(d.x+d.y>2.0){vec4 coords=vec4(-d.x+0.25,d.x,d.y,-d.y-0.25)*texelSize.xyxy+texCoord.xyxy;vec4 c;c.xy=sampleLevelZeroOffset(inputBuffer,coords.xy,vec2(-1,0)).rg;c.zw=sampleLevelZeroOffset(inputBuffer,coords.zw,vec2(1,0)).rg;c.yxwz=decodeDiagBilinearAccess(c.xyzw);vec2 cc=vec2(2.0)*c.xz+c.yw;movec(bvec2(step(0.9,d.zw)),cc,vec2(0.0));weights+=areaDiag(d.xy,cc,subsampleIndices.z);}d.xz=searchDiag2(texCoord,vec2(-1.0,-1.0),end);if(sampleLevelZeroOffset(inputBuffer,texCoord,vec2(1,0)).r>0.0){d.yw=searchDiag2(texCoord,vec2(1.0),end);d.y+=float(end.y>0.9);}else{d.yw=vec2(0.0);}if(d.x+d.y>2.0){vec4 coords=vec4(-d.x,-d.x,d.y,d.y)*texelSize.xyxy+texCoord.xyxy;vec4 c;c.x=sampleLevelZeroOffset(inputBuffer,coords.xy,vec2(-1,0)).g;c.y=sampleLevelZeroOffset(inputBuffer,coords.xy,vec2(0,-1)).r;c.zw=sampleLevelZeroOffset(inputBuffer,coords.zw,vec2(1,0)).gr;vec2 cc=vec2(2.0)*c.xz+c.yw;movec(bvec2(step(0.9,d.zw)),cc,vec2(0.0));weights+=areaDiag(d.xy,cc,subsampleIndices.w).gr;}return weights;}float searchLength(const in vec2 e,const in float offset){vec2 scale=SEARCHTEX_SIZE*vec2(0.5,-1.0);vec2 bias=SEARCHTEX_SIZE*vec2(offset,1.0);scale+=vec2(-1.0,1.0);bias+=vec2(0.5,-0.5);scale*=1.0/SEARCHTEX_PACKED_SIZE;bias*=1.0/SEARCHTEX_PACKED_SIZE;return texture2D(searchTexture,scale*e+bias).r;}float searchXLeft(in vec2 texCoord,const in float end){vec2 e=vec2(0.0,1.0);for(int i=0;i<MAX_SEARCH_STEPS_INT;++i){if(!(texCoord.x>end&&e.g>0.8281&&e.r==0.0)){break;}e=texture2D(inputBuffer,texCoord).rg;texCoord=vec2(-2.0,0.0)*texelSize+texCoord;}float offset=-(255.0/127.0)*searchLength(e,0.0)+3.25;return texelSize.x*offset+texCoord.x;}float searchXRight(vec2 texCoord,const in float end){vec2 e=vec2(0.0,1.0);for(int i=0;i<MAX_SEARCH_STEPS_INT;++i){if(!(texCoord.x<end&&e.g>0.8281&&e.r==0.0)){break;}e=texture2D(inputBuffer,texCoord).rg;texCoord=vec2(2.0,0.0)*texelSize.xy+texCoord;}float offset=-(255.0/127.0)*searchLength(e,0.5)+3.25;return-texelSize.x*offset+texCoord.x;}float searchYUp(vec2 texCoord,const in float end){vec2 e=vec2(1.0,0.0);for(int i=0;i<MAX_SEARCH_STEPS_INT;++i){if(!(texCoord.y>end&&e.r>0.8281&&e.g==0.0)){break;}e=texture2D(inputBuffer,texCoord).rg;texCoord=-vec2(0.0,2.0)*texelSize.xy+texCoord;}float offset=-(255.0/127.0)*searchLength(e.gr,0.0)+3.25;return texelSize.y*offset+texCoord.y;}float searchYDown(vec2 texCoord,const in float end){vec2 e=vec2(1.0,0.0);for(int i=0;i<MAX_SEARCH_STEPS_INT;i++){if(!(texCoord.y<end&&e.r>0.8281&&e.g==0.0)){break;}e=texture2D(inputBuffer,texCoord).rg;texCoord=vec2(0.0,2.0)*texelSize.xy+texCoord;}float offset=-(255.0/127.0)*searchLength(e.gr,0.5)+3.25;return-texelSize.y*offset+texCoord.y;}vec2 area(const in vec2 dist,const in float e1,const in float e2,const in float offset){vec2 texCoord=vec2(AREATEX_MAX_DISTANCE)*round(4.0*vec2(e1,e2))+dist;texCoord=AREATEX_PIXEL_SIZE*texCoord+0.5*AREATEX_PIXEL_SIZE;texCoord.y=AREATEX_SUBTEX_SIZE*offset+texCoord.y;return texture2D(areaTexture,texCoord).rg;}void detectHorizontalCornerPattern(inout vec2 weights,const in vec4 texCoord,const in vec2 d){
+44851:    "uniform sampler2D weightMap;varying vec2 vOffset0;varying vec2 vOffset1;void movec(const in bvec2 c,inout vec2 variable,const in vec2 value){if(c.x){variable.x=value.x;}if(c.y){variable.y=value.y;}}void movec(const in bvec4 c,inout vec4 variable,const in vec4 value){movec(c.xy,variable.xy,value.xy);movec(c.zw,variable.zw,value.zw);}void mainImage(const in vec4 inputColor,const in vec2 uv,out vec4 outputColor){vec4 a;a.x=texture2D(weightMap,vOffset0).a;a.y=texture2D(weightMap,vOffset1).g;a.wz=texture2D(weightMap,uv).rb;vec4 color=inputColor;if(dot(a,vec4(1.0))>=1e-5){bool h=max(a.x,a.z)>max(a.y,a.w);vec4 blendingOffset=vec4(0.0,a.y,0.0,a.w);vec2 blendingWeight=a.yw;movec(bvec4(h),blendingOffset,vec4(a.x,0.0,a.z,0.0));movec(bvec2(h),blendingWeight,a.xz);blendingWeight/=dot(blendingWeight,vec2(1.0));vec4 blendingCoord=blendingOffset*vec4(texelSize,-texelSize)+uv.xyxy;color=blendingWeight.x*texture2D(inputBuffer,blendingCoord.xy);color+=blendingWeight.y*texture2D(inputBuffer,blendingCoord.zw);}outputColor=color;}",
+45138:        r.render(this.scene, this.camera),
+45321:      return (console.warn(this.name, "distinction was removed."), 1);
+45324:      console.warn(this.name, "distinction was removed.");
+45352:uniform vec2 resolution;uniform vec2 texelSize;uniform float cameraNear;uniform float cameraFar;uniform float aspect;uniform float time;varying vec2 vUv;vec4 sRGBToLinear(const in vec4 value){return vec4(mix(pow(value.rgb*0.9478672986+vec3(0.0521327014),vec3(2.4)),value.rgb*0.0773993808,vec3(lessThanEqual(value.rgb,vec3(0.04045)))),value.a);}float readDepth(const in vec2 uv){
+45360:return perspectiveDepthToViewZ(depth,cameraNear,cameraFar);
+45362:return orthographicDepthToViewZ(depth,cameraNear,cameraFar);
+45371:    "uniform vec2 resolution;uniform vec2 texelSize;uniform float cameraNear;uniform float cameraFar;uniform float aspect;uniform float time;varying vec2 vUv;VERTEX_HEAD void main(){vUv=position.xy*0.5+0.5;VERTEX_MAIN_SUPPORT gl_Position=vec4(position.xy,1.0,1.0);}",
+45386:          cameraNear: new Uniform(0.3),
+45387:          cameraFar: new Uniform(1e3),
+45400:        this.copyCameraSettings(s));
+45495:    adoptCameraSettings(r) {
+45496:      this.copyCameraSettings(r);
+45498:    copyCameraSettings(r) {
+45500:        ((this.uniforms.cameraNear.value = r.near),
+45501:        (this.uniforms.cameraFar.value = r.far),
+45502:        r instanceof PerspectiveCamera
+45714:    set mainCamera(r) {
+45715:      this.fullscreenMaterial.copyCameraSettings(r);
+45716:      for (const e of this.effects) e.mainCamera = r;
+45733:        e.removeEventListener("change", this.listener);
+45812:          r.render(this.scene, this.camera));
+45830:        (r.removeEventListener("change", this.listener), r.dispose());
+45864:        l = this.camera,
+45906:const effectCamera = new OrthographicCamera(-1, 1, 1, -1, 0, 1),
+45932:    const e = new EffectPass(effectCamera);
+45941:    const e = new EffectPass(effectCamera, new FXAAEffect());
+45952:      effectCamera,
+45987:      effectCamera,
+45998:    const i = new EffectPass(effectCamera, new ToneMappingEffect({ ...e }));
+46011:    const o = new SelectiveBloomEffect(e, e.camera, { ...a, mipmapBlur: !0 });
+46013:    const l = new EffectPass(effectCamera, o);
+46024:    camera: e,
+46031:        "Godrays requires scene camera, light source and depth texture.",
+46049:      throw new Error("DOF requires scene camera and depth texture.");
+46061:      s.cameraTarget && (a.effects[0].target = e.target),
+46103:      (this.renderPass.camera = i.camera),
+46117:      this.canvasCnt.removeChild(this.canvasNode),
+46182:      i.camera,
+46206:      (this.camera = e.camera),
+46240:      e.render(this.scene, this.camera),
+46309:      webglRenderer.webgl.compile(this.fsQuad.mesh, this.fsQuad.camera),
+46312:  compute({ mesh: e = null, camera: i = null } = {}) {
+46350:    (_ = this.afterCompute) == null || _.call(this, { mesh: e, camera: i });
+46380:vec2 encodeNormalSpheremap(vec3 n) {
+46385:vec3 decodeNormalSpheremap(vec2 n) {
+46393:vec2 encodeNormalSpheremapUint8(vec3 n) {
+46394:    return encodeNormalSpheremap(n) * 0.5 + 0.5;
+46398:    return decodeNormalSpheremap(n * 2.0 - 1.0);
+46882:            (this.simulation.compute({ mesh: this, camera: _ }),
+47183:                (this.simulation.compute({ mesh: this, camera: D }),
+47785:new Vector3();
+47786:new Vector3();
+47787:new Vector3();
+47788:new Vector3();
+47790:const _v0$h = new Vector3(),
+47791:  _v1$b = new Vector3();
+47795:      (this.camera = null),
+47797:      events$1.on("prerender", this.updateCamera, this),
+47803:  updateCamera() {
+47804:    if (!this.camera) return;
+47805:    (_v0$h.set(0, 0, -1).applyQuaternion(this.camera.quaternion),
+47806:      _v1$b.set(0, 1, 0).applyQuaternion(this.camera.quaternion));
+47813:      ? (i.positionX.linearRampToValueAtTime(this.camera.position.x, o),
+47814:        i.positionY.linearRampToValueAtTime(this.camera.position.y, o),
+47815:        i.positionZ.linearRampToValueAtTime(this.camera.position.z, o),
+47823:          this.camera.position.x,
+47824:          this.camera.position.y,
+47825:          this.camera.position.z,
+48008:        url: "camera/zoom-off-5.ogg",
+48013:        url: "camera/zoom-in-5.ogg",
+48018:        url: "camera/whoosh2.ogg",
+48260:          (this.positionals[e].removeFromParent(),
+48721:        normals[i] = decodeNormalSpheremap(n.gb);
+48784:  planet: {
+48788:    uInfoRange: { value: new Vector3(1e-4, 2e-4, 0.1) },
+48790:    uDepthRange: { value: new Vector3(1e-4, 0.01001, 0.25) },
+48791:    uNormalRange: { value: new Vector3(0.4, 0.5, 0.3) },
+48803:        uCameraNear: { value: e.camera.near, ignore: !0 },
+48804:        uCameraFar: { value: e.camera.far, ignore: !0 },
+48810:        uInfoRange: { value: new Vector3() },
+48812:        uDepthRange: { value: new Vector3() },
+48813:        uNormalRange: { value: new Vector3() },
+48833:                uniform float uCameraNear;
+48834:                uniform float uCameraFar;
+48874:                    float outlineValue = outline(tDiffuse, tInfo, vUv, uOutlineThickness, resScale, uInfoRange, uDepthRange, uNormalRange, uSmoothMargin, uInfoMinScale, uOutlineFade, vec2(uCameraNear, uCameraFar), nearestDepth, centerDepth);
+48893:  ((i.uniforms.uCameraNear.value = r.camera.near),
+48894:    (i.uniforms.uCameraFar.value = r.camera.far));
+48895:  const s = customUniforms$1[r.name] || customUniforms$1.planet;
+49090:		directLight.color *= ( directLight.visible && receiveShadow ) ? getPointShadow( pointShadowMap[ i ], pointLightShadow.shadowMapSize, pointLightShadow.shadowIntensity, pointLightShadow.shadowBias, pointLightShadow.shadowRadius, vPointShadowCoord[ i ], pointLightShadow.shadowCameraNear, pointLightShadow.shadowCameraFar ) : 1.0;
+49399:        #if defined(USE_BATCHING) && !defined(IS_TERRAIN) // terrain is static, not moved by batched texture
+49434:        #if defined(USE_BATCHING) && !defined(IS_TERRAIN) // terrain is static, not moved by batched texture
+49476:        vReflect = reflect(wNormal, normalize(worldPosition.xyz - cameraPosition.xyz));
+49590:        float dist = length(wPos - cameraPosition);
+49809:        gInfo = vec4(1.0 - (0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5), encodeNormalSpheremap(geometryNormal), outlineContribution);
+49853:              uLightPos: { value: new Vector3() },
+49964:                        gInfo = vec4(1.0 - (0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5), encodeNormalSpheremap(nvNormal), 1.0);
+50113:      "noises-terrain.ktx2",
+50258:                // gInfo = vec4(1.0 - (0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5), encodeNormalSpheremap(normalize(vNormal)), outlineContribution);
+50561:                gInfo = vec4(1.0 - (0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5), encodeNormalSpheremap(normalize(vNormal)), outlineContribution);
+50567:class planet$1 {
+50574:        `planets/present/intro/${client$1.lowMemoryDevice ? "low/" : ""}planet.drc`,
+50576:      geometryLoader.load("planets/present/intro/water.drc"),
+50577:      geometryLoader.load("planets/present/intro/trees.drc"),
+50578:      geometryLoader.load("planets/present/intro/clouds.drc"),
+50580:    ((this.planetMesh = new Mesh(e, introMaterial({}))),
+50581:      (this.planetMesh.name = "Planet"),
+50588:      (this.planetMesh.receiveShadow = !0),
+50589:      (this.planetMesh.castShadow = !0),
+50597:      this.scene.planetGroup.add(this.planetMesh),
+50598:      this.scene.planetGroup.add(this.waterMesh),
+50599:      this.scene.planetGroup.add(this.treeMesh),
+50600:      this.scene.planetGroup.add(this.cloudMesh),
+50644:    ((this.mesh = new Mesh(new SphereGeometry(150, 32, 16), skyMaterial({}))),
+50652:const _v0$g = new Vector3(),
+50653:  _v1$a = new Vector3(),
+50654:  _s$5 = new Sphere();
+50667:    (this.geometry.boundingSphere === null &&
+50668:      this.geometry.computeBoundingSphere(),
+50669:      _s$5.copy(this.geometry.boundingSphere),
+50689:      this.scene.planetGroup.add(this.mesh),
+50695:        e.map((a) => geometryLoader.load(`planets/present/${a}.drc`)),
+50759:                    // set thickness based on camera distance, so that far away lines don't appear too thin
+50814:      geometryLoader.load("./planets/present/waterfall_vfx.drc"),
+50815:      geometryLoader.load("./planets/present/waterfallsplash_vfx.drc"),
+50816:      geometryLoader.load("./planets/present/waterfall_inlet_vfx.drc"),
+50935:                    // foam near ground
+50975:      this.scene.planetGroup.add(this.mesh),
+51070:      this.scene.planetGroup.add(this.mesh2),
+51185:      this.scene.planetGroup.add(this.mesh3),
+51200:      new SphereGeometry(38, 32, 32),
+51406:                gInfo = vec4(1.0 - (0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5), encodeNormalSpheremap(norm), outlineContribution);
+51412:const _v0$f = new Vector3(),
+51413:  _v1$9 = new Vector3(),
+51414:  _v2$2 = new Vector3(),
+51427:      (this.camPosition = new Vector3()),
+51432:      "planets/present/intro/title_vertical.drc",
+51489:        camera: this.scene.camera,
+51491:        onMove: this.move,
+51500:    const e = this.scene.camera;
+51555:        this.move(e))
+51559:  move(e) {
+51665:    const e = await geometryLoader.load("/planets/intro/points.drc"),
+51819:    const e = await geometryLoader.load("planets/present/intro/galaxies.drc");
+51892:                    // make some planet shaped
+51935:const _v0$e = new Vector3(),
+51959:    csmBoundingSphere: f = new Sphere(new Vector3(), 1),
+51962:    cameraLayer: b = 30,
+51970:      (this._camera = this._scene.camera),
+51971:      (this._offset = new Vector3().setFromSpherical(a)),
+51977:      followCSM.setOrthographicFrustum(this.shadow.camera, h),
+51987:      const w = new OrthographicCamera(),
+51992:        (M = this._camera._followedMesh) != null && M.isWorldCharacters)
+51994:        const N = this._camera._followedMesh._localObject;
+51995:        (_v0$e.applyQuaternion(N.quaternion),
+52103:        (this.target.position.copy(this._camera.target),
+52106:            .copy(this._camera.target)
+52107:            .sub(this._camera.position)
+52112:        (i = this._camera._followedMesh) != null && i.isWorldCharacters)
+52114:        const c = this._camera._followedMesh._localObject;
+52115:        (_v0$e.copy(this._offset).applyQuaternion(c.quaternion),
+52119:          this.shadow.camera.up.copy(c.up));
+52144:function followCamera(r) {
+52151:        oe(this, e, new Vector3());
+52152:        oe(this, i, new Vector3());
+52153:        oe(this, s, new Vector3());
+52156:        ((this.isFollowCamera = !0),
+52158:          (this._sphericalCameraPosition = new Spherical()),
+52166:          (this._followedMeshOffset = new Vector3()),
+52168:          (this._followedMeshOffsetTarget = new Vector3()),
+52169:          (this._followedMeshTarget = new Vector3()),
+52170:          (this._cameraCollisions = !0),
+52171:          (this._cameraCollisionsMinDistance = 0.75),
+52172:          (this._cameraCollisionsIncrement = 0.05),
+52173:          (this._cameraCollisionsMaxIterations = 10),
+52174:          (this._cameraTargetLocalLerp = 0.0125),
+52175:          (this._cameraTargetWorldLerp = 0.175),
+52176:          (this._cameraRotationLerp = 0.03),
+52177:          (this._cameraSphericalRotationLerp = 0.075),
+52178:          (this._cameraSphericalRotationFastLerp = 0.3),
+52179:          (this._cameraSphericalRadiusLerp = 0.035),
+52180:          (this._cameraSphericalRadiusCollisionsLerp = 0.35),
+52181:          (this._cameraAutomaticCenteringActiveLerp = 0.1),
+52182:          (this._cameraAutomaticCenteringInactiveLerp = 0.0125),
+52185:          (this._cameraInactiveMultiplier = 0.025),
+52188:          (this.overwriteTarget = new Vector3()),
+52193:        relativeCameraPosition: x = new Vector3(0, 2, 5.75),
+52194:        relativeCameraOffset: b = new Vector3(0, 1, 0.5),
+52197:          throw new Error("follow camera needs a mesh character");
+52200:          L(this, a).setFromVector3(x),
+52226:            x = this._followedMesh._collisionPhysics,
+52227:            b = math.lerpCoefFPS(this._cameraTargetLocalLerp),
+52228:            T = math.lerpCoefFPS(this._cameraTargetWorldLerp);
+52233:              .applyQuaternion(_.quaternion),
+52238:          const M = x._rayCaster.intersectObject(x._collider)[0];
+52259:            D = x._isMoving ? w : this._cameraInactiveMultiplier,
+52267:            const F = this._followedMesh._controls,
+52270:                F._touchCameraFinger === -1 &&
+52271:                F._gamepadMovingCamera === !1;
+52274:                ? this._cameraAutomaticCenteringInactiveLerp
+52275:                : this._cameraAutomaticCenteringActiveLerp));
+52288:                this._cameraRotationLerp * D * this._automaticCenteringAmount,
+52295:                this._cameraRotationLerp * this._automaticCenteringAmount,
+52299:          if (this._cameraCollisions && x._collider) {
+52315:            const W = x._rayCaster.intersectObject(x._collider);
+52326:              this._followedMeshDistance * this._cameraCollisionsIncrement;
+52331:              Z < this._cameraCollisionsMaxIterations;
+52344:                this._cameraCollisionsMinDistance,
+52348:                J.distance < this._cameraCollisionsMinDistance &&
+52369:            this._cameraSphericalRadiusCollisionsLerp,
+52380:                ? this._cameraSphericalRotationLerp
+52381:                : this._cameraSphericalRotationFastLerp,
+52383:            H = math.lerpCoefFPS(this._cameraSphericalRadiusLerp);
+52435:              .applyQuaternion(this._followedMesh._localObject.quaternion),
+52468:      (T.setFromSpherical(x).applyQuaternion(_.quaternion),
+52474:        this._followedMesh._collisionPhysics._charactersCapsule.segment.end,
+52476:        (_.y += this._followedMesh._collisionPhysics._charactersCapsule.radius),
+52477:        _.applyQuaternion(this._followedMesh._localObject.quaternion));
+52482:      const x = (D = this._followedMesh) == null ? void 0 : D._collisionPhysics;
+52483:      if (!x || !x._collider || !x._colliderMesh) return !1;
+52484:      const b = x._collider.geometry,
+52485:        T = x._colliderMesh.geometry;
+52486:      if (!T.attributes.skipcollision) return !1;
+52489:      return T.attributes.skipcollision.array[w] > 0;
+52494:function followCamera$1(r = "perspective") {
+52495:  const e = baseCamera(r),
+52496:    i = followCamera(e);
+52810:  } else console.warn(`MeshBVH: Invalid build strategy value ${o} used.`);
+52818:class MeshBVHNode {
+52930:        "MeshBVH: Cannot store child pointer greater than 32 bits.",
+52965:  const D = new MeshBVHNode();
+52977:            `MeshBVH: Max depth of ${o} reached when generating BVH. Consider increasing maxDepth.`,
+52989:      const $ = new MeshBVHNode(),
+52995:      const se = new MeshBVHNode(),
+53012:        'MeshBVH: Provided geometry contains groups or a range that do not fully span the vertex contents while using the "indirect" option. BVH may incorrectly report intersections on unrendered portions of the geometry.',
+53055:  const r = new Vector3();
+53074:    const r = new Vector3(),
+53075:      e = new Vector3(),
+53076:      i = new Vector3();
+53099:      e = new Vector3(),
+53100:      i = new Vector3();
+53136:    const r = new Vector3(),
+53137:      e = new Vector3(),
+53171:      (this.satAxes = new Array(4).fill().map(() => new Vector3())),
+53176:      (this.sphere = new Sphere()),
+53180:  intersectsSphere(e) {
+53209:  const r = new Vector3(),
+53210:    e = new Vector3(),
+53242:    o = new Vector3(),
+53243:    l = new Vector3(),
+53244:    c = new Vector3(),
+53245:    h = new Vector3(),
+53246:    d = new Vector3(),
+53250:    x = new Vector3();
+53353:  const r = new Vector3();
+53359:  const r = new Vector3(),
+53360:    e = new Vector3(),
+53399:      (this.min = new Vector3()),
+53400:      (this.max = new Vector3()),
+53403:      (this.points = new Array(8).fill().map(() => new Vector3())),
+53404:      (this.satAxes = new Array(3).fill().map(() => new Vector3())),
+53493:    a = new Vector3();
+53545:  const r = new Vector3();
+53554:    s = new Vector3(),
+53555:    a = new Vector3();
+53751:const temp = new Vector3(),
+53752:  temp1$2 = new Vector3();
+53783:  _vA = new Vector3(),
+53784:  _vB = new Vector3(),
+53785:  _vC = new Vector3(),
+53789:  _normalA = new Vector3(),
+53790:  _normalB = new Vector3(),
+53791:  _normalC = new Vector3(),
+53792:  _intersectionPoint = new Vector3();
+53811:    const _ = new Vector3();
+53853:          new Vector3(),
+53856:    const x = { a: o, b: l, c, normal: new Vector3(), materialIndex: 0 };
+54215:  temp1$1 = new Vector3(),
+54216:  temp2$1 = new Vector3(),
+54217:  temp3$1 = new Vector3(),
+54218:  temp4$1 = new Vector3();
+54540:  temp1 = new Vector3(),
+54541:  temp2 = new Vector3(),
+54542:  temp3 = new Vector3(),
+54543:  temp4 = new Vector3();
+54664:    throw new Error("MeshBVH: Recursive calls to bvhcast not supported.");
+54814:class MeshBVH {
+54836:      c = new MeshBVH(i, { ...s, [SKIP_GENERATION]: !0 });
+54853:          "MeshBVH: InterleavedBufferAttribute is not supported for the index attribute.",
+54855:    } else throw new Error("MeshBVH: Only BufferGeometries are supported.");
+54860:      throw new Error("MeshBVH: SharedArrayBuffer is not available.");
+55025:  intersectsSphere(e) {
+55028:      intersectsTriangle: (i) => i.intersectsSphere(e),
+55058:  direction = new Vector3(),
+55062:  _worldScale = new Vector3(),
+55079:    _mesh.geometry.boundingSphere === null &&
+55080:      (_mesh.geometry.boundingSphere = new Sphere());
+55090:          this.getBoundingSphereAt(p, _mesh.geometry.boundingSphere));
+55135:  return new Worker("/assets/collisionworker-eT5h7hIA.js", {
+55139:class collider extends Mesh {}
+55140:collider.prototype.raycast = acceleratedRaycast;
+55144:    oe(this, ir, new Vector3());
+55146:    oe(this, gs, new Quaternion());
+55148:    oe(this, Rt, new Vector3());
+55149:    oe(this, Qt, new Vector3());
+55150:    oe(this, ui, new Vector3());
+55157:      (this._camera = this._characters._camera),
+55161:      (this._colliderMesh = null),
+55163:      (this._collider = null),
+55166:      (this._positionPrevPhysics = new Vector3()),
+55167:      (this._positionNextPhysics = new Vector3()),
+55168:      (this._accelerationPhysics = new Vector3()),
+55169:      (this._velocityPhysics = new Vector3()),
+55177:      (this._gravity = typeof i.gravity == "number" ? i.gravity : -0.00981),
+55189:      (this._lastFloorPosition = new Vector3()),
+55192:      (this._moveTowardsCameraTarget = i.moveTowardsCameraTarget !== !1),
+55196:      (this._rayCaster = new Raycaster()),
+55205:        segment: new Line3(new Vector3(0, 0, 0), new Vector3(0, 1, 0)),
+55239:      this._initializeBVH(i));
+55254:  async _initializeBVH(e) {
+55263:          this._geometry.computeBoundingSphere(),
+55264:          (this._geometry.boundsTree = MeshBVH.deserialize(o, this._geometry, {
+55267:          (this._collider = new collider(this._geometry)),
+55271:      !e.colliderGeometry)
+55275:      typeof e.colliderGeometry == "string"
+55276:        ? await geometryLoader.load(e.colliderGeometry)
+55277:        : e.colliderGeometry;
+55278:    ((this._colliderMesh = new Mesh(s)),
+55279:      this._colliderMesh.geometry.computeBoundingBox(),
+55280:      this._colliderMesh.geometry.computeBoundingSphere(),
+55281:      this._colliderMesh.updateMatrixWorld(!0),
+55283:        position: this._colliderMesh.geometry.attributes.position.array,
+55284:        index: this._colliderMesh.geometry.index
+55285:          ? this._colliderMesh.geometry.index.array
+55287:        matrixWorld: this._colliderMesh.matrixWorld.elements,
+55309:        const h = this._moveTowardsCameraTarget
+55310:          ? this._camera.baseTarget
+55313:          (L(this, Rt).copy(this._camera.basePosition).sub(h).normalize(),
+55322:            .applyQuaternion(L(this, gs)),
+55340:            const b = this._rayCaster.intersectObject(this._collider)[0];
+55373:        const d = this._camera.isFollowCamera
+55374:          ? this._camera._spherical.theta
+55380:            L(this, ms).setFromVector3(e).theta + d,
+55387:          L(this, Rt).copy(s.up).multiplyScalar(this._gravity),
+55434:          L(this, ms).setFromVector3(
+55435:            L(this, Rt).applyQuaternion(
+55480:      L(this, Rt).set(0, 0, -1).applyQuaternion(i.quaternion),
+55547:    const i = this._rayCaster.intersectObject(this._collider)[0],
+55622:let collisionPhysics = la;
+55762:      (this.boundingSphere = new Sphere()),
+55781:    return (s.indexOf("avatar") !== 0 && (s = `avatar/${s}`), s);
+55811:      (s.boundingSphere = new Sphere()),
+55895:      (l.boundingSphere = new Sphere()),
+55896:      l.boundingSphere.center.fromArray(o.sphere.center),
+55897:      (l.boundingSphere.radius = o.sphere.radius * 2),
+55903:    if (((i.__loadingModels = s), a || i.isBeingRemoved)) return;
+55913:    if (l && c && !i.isBeingRemoved) {
+55915:      (o && this._collisionPhysics._updateCapsule(d.boundingBox),
+55977:            !s.isBeingRemoved &&
+56080:      o.boundingSphere === null && (o.boundingSphere = new Sphere()),
+56082:      o.boundingSphere.copy(s.boundingSphere),
+56424:class controlsCirlces extends Group {
+56431:      (this._controls = e),
+56443:        tCircles: { value: textureLoader.load("controls/circles.avif") },
+56491:    ((this._moveCircle = new Mesh(utils.plane, e)),
+56492:      (this._moveCircle.isCharacterControls = !0),
+56493:      (this._moveCircle.name = "Move Circle"),
+56494:      (this._moveCircle.frustumCulled = !1),
+56495:      (this._moveCircle.renderOrder = 99999),
+56496:      (this._moveCircle.castShadow = !1),
+56497:      (this._moveCircle.receiveShadow = !1),
+56498:      (this._moveCircle.visible = !1),
+56499:      this.add(this._moveCircle));
+56549:    (this._controls._characters._controlMode === "automatic"
+56552:          this._controls._touchMovingFinger === -1 ? 0 : 1,
+56560:        this._moveCircle.position.copy(
+56561:          this._controls._automaticMovingCirclePosition11(),
+56565:          this._controls._canTouch ? 1 : 0,
+56575:            this._controls._controlTouchManualMultiplier,
+56579:        this._moveCircle.position.copy(
+56580:          this._controls._manualMovingCirclePosition11(),
+56586:        this._controls._touchMovingDelta,
+56589:      this._moveCircle.material.uniforms.uInnerPos.value
+56592:      (this._moveCircle.material.uniforms.uInnerPos.value.y *= -1),
+56593:      (this._moveCircle.visible = this._touchActive !== 0),
+56594:      (this._moveCircle.material.uniforms.uScale.value = this._touchScale),
+56595:      (this._moveCircle.material.uniforms.uAlpha.value = ease(
+56622:    oe(this, vs, new Vector3());
+56623:    oe(this, $t, new Vector3());
+56627:      (this._moveKeysPressed = [!1, !1, !1, !1]),
+56636:      (this._gamepadMovingCamera = !1),
+56640:      (this._touchCameraFinger = -1),
+56661:      (this._circles = new controlsCirlces(this)),
+56672:      events$1.emit("character_controls_shift_pressed", e));
+56716:        this._moveKeysPressed[0] = i;
+56720:        this._moveKeysPressed[1] = i;
+56724:        this._moveKeysPressed[2] = i;
+56728:        this._moveKeysPressed[3] = i;
+56743:        (this._characters._collisionPhysics._jumpRequested = !0),
+56746:          this._characters._collisionPhysics._jumpRequested = !1;
+56772:        : this._touchCameraFinger === -1 &&
+56773:          ((this._touchCameraFinger = e.finger), this._onTouchDrag(e));
+56776:  _rotateCharactersCamera(e = 0, i = 0) {
+56777:    this._characters._camera.isFollowCamera &&
+56778:      ((this._characters._camera._sphericalTarget.phi +=
+56780:        (this._characters._camera._sphericalVerticalMaxLimit -
+56781:          this._characters._camera._sphericalVerticalMinLimit)),
+56782:      (this._characters._camera._sphericalTarget.theta -= e * math.TWO_PI));
+56789:            this._characters._collisionPhysics &&
+56792:                this._characters._collisionPhysics._charactersCapsule.segment
+56796:            .setCamera(this._characters._camera)
+56802:        } else this._rotateCharactersCamera(e.delta11.x, e.delta11.y);
+56814:      e.finger === this._touchCameraFinger &&
+56815:        this._rotateCharactersCamera(e.delta11.x, e.delta11.y);
+56824:        : e.finger === this._touchCameraFinger &&
+56825:          (this._touchCameraFinger = -1);
+56848:      (this._moveKeysPressed.includes(!0) &&
+56849:        (this._moveKeysPressed[0] && (L(this, $t).z += 1),
+56850:        this._moveKeysPressed[1] && (L(this, $t).z -= 1),
+56851:        this._moveKeysPressed[2] && (L(this, $t).x += 1),
+56852:        this._moveKeysPressed[3] && (L(this, $t).x -= 1),
+56866:        (this._rotateCharactersCamera(i, s),
+56867:          (this._gamepadMovingCamera = Math.abs(i) > 0 || Math.abs(s) > 0));
+56881:    for (let e = 0; e < this._moveKeysPressed.length; e++)
+56882:      this._moveKeysPressed[e] = !1;
+56889:      (this._touchCameraFinger = -1),
+56893:    ((this._characters._collisionPhysics._jumpRequested = !1),
+56895:        this._characters._collisionPhysics._jumpRequested = !1;
+56911:      events$1.on("character_controls_shift_press", this._onTouchSprint, this),
+56940:      events$1.off("character_controls_shift_press", this._onTouchSprint, this),
+56943:      global$1.interactionNode.removeEventListener(
+56947:      global$1.interactionNode.removeEventListener(
+56951:      global$1.interactionNode.removeEventListener(
+57036:                    vDist = distance(wPos, cameraPosition);
+57076:    oe(this, or, new Vector3());
+57077:    oe(this, ha, new Vector3());
+57117:      (this.boundingSphere = new Sphere()),
+57208:                      .boundingSphere.radius + this._tagsVerticalOffset,
+57248:    oe(this, ki, new Vector3());
+57249:    oe(this, lr, new Vector3());
+57250:    oe(this, cr, new Vector3());
+57251:    oe(this, ur, new Vector3());
+57477:                            // add gravity
+57563:    (L(this, lr).set(1, 0, 0).applyQuaternion(e.quaternion),
+57564:      L(this, cr).set(0, 0, 1).applyQuaternion(e.quaternion),
+57565:      L(this, ur).set(0, 0, -1).applyQuaternion(e.quaternion));
+59255:            (this.remove(_),
+59274:    (h.prototype.remove = function (f) {
+59281:        f.onRemove(this),
+59604:    (a.prototype.remove = function (c) {
+59610:      return r.prototype.remove.call(this, c);
+60489:          D.parent && D.parent.remove(D),
+60503:    (T.prototype.remove = function (D) {
+60510:          D.onRemove(this),
+60520:          D.onRemove(this),
+60524:      return r.prototype.remove.call(this, D);
+60749:    (h.prototype._handleRemove = function (x) {
+60753:            (x.extensionField.parent.remove(x.extensionField),
+60762:          this._handleRemove(x._nestedArray[T]);
+60836:            (r.decorateRoot.remove(d.$type),
+61194:        l.parent && l.parent !== this.parent && l.parent.remove(l),
+61202:    (s.prototype.remove = function (l) {
+61222:    (s.prototype.onRemove = function (l) {
+61224:        (h = this.fieldsArray[c]).parent && h.parent.remove(h);
+61225:      r.prototype.onRemove.call(this, l);
+61315:      (this.parent && this.parent !== h && this.parent.remove(this),
+61321:    (l.prototype.onRemove = function (h) {
+61323:      (d instanceof i && d._handleRemove(this),
+61513:    (s.prototype.remove = function (o) {
+62613:    removeClient: f = noop,
+62614:    removeAllClients: _ = noop,
+62638:      (this._removeAllClients = _),
+62640:      (this._removeClient = f),
+62741:        (this._removeAllClients(),
+62761:        (this._clients.delete(i.leave), this._removeClient(i.leave));
+62815:      oe(this, vi, new Vector3());
+62816:      oe(this, yr, new Vector3());
+62817:      oe(this, br, new Vector3());
+62819:      oe(this, Wn, new Quaternion());
+62842:        (this._camera = this._scene.camera),
+62849:        boundingSphere: new Sphere(),
+62851:        velocity: new Vector3(),
+62873:        (this._initialPosition = new Vector3()),
+62875:        (this._initialUp = new Vector3()),
+62902:        (this._controls = new charactersControls(this, i)),
+62908:        (this._collisionPhysics = new collisionPhysics(this, { ...i })),
+62914:        Promise.all([this._localModelReady, this._collisionPhysics.ready]).then(
+62922:              this._camera.isFollowCamera &&
+62923:                this._camera.follow({ mesh: this, ...i }),
+62950:                  removeClient: (a) => {
+62951:                    this._removeCharacter(a);
+62953:                  removeAllClients: () => {
+62954:                    this._removeAllCharacters();
+63031:      (this._collisionPhysics._update(this._controls._update(), s),
+63059:      this._camera.isPerspectiveCamera &&
+63061:          this._camera.projectionMatrix,
+63062:          this._camera.matrixWorldInverse,
+63076:            let H = this._collisionPhysics._deltaRatioAccumulatorSteps;
+63115:            this._collisionPhysics._deltaRatioAccumulator,
+63117:            L(this, Wn).slerpQuaternions(
+63120:              this._collisionPhysics._deltaRatioAccumulator,
+63128:            T.up.set(0, 1, 0).applyQuaternion(T.quaternion));
+63132:            T.boundingSphere
+63133:              .copy(this._geometryInfo[w].boundingSphere)
+63136:              w === 0 || L(this, wr).intersectsSphere(T.boundingSphere),
+63180:        boundingSphere: new Sphere(),
+63181:        prevPosition: new Vector3(),
+63182:        nextPosition: new Vector3(),
+63183:        targetPosition: new Vector3(),
+63184:        prevRotation: new Quaternion(),
+63185:        nextRotation: new Quaternion(),
+63186:        targetRotation: new Quaternion(),
+63187:        velocity: new Vector3(),
+63189:        isBeingRemoved: !1,
+63227:              l.up.set(0, 1, 0).applyQuaternion(l.quaternion));
+63236:    _removeCharacter(i) {
+63243:        (s.isBeingRemoved = !0),
+63253:    _removeAllCharacters() {
+63267:      if (!this._collisionPhysics._collider) return;
+63277:          .applyQuaternion(L(this, Wn)),
+63281:        this._collisionPhysics._charactersCapsule.segment.end.y +
+63282:          this._collisionPhysics._charactersCapsule.radius * 2,
+63285:        this._collisionPhysics._rayCaster.set(
+63289:      const d = this._collisionPhysics._rayCaster.intersectObject(
+63290:        this._collisionPhysics._collider,
+63295:          this._collisionPhysics._geometry.boundsTree.closestPointToPoint(
+63301:        this._collisionPhysics._snap(
+63311:        this._camera.isFollowCamera &&
+63312:          this._camera._sphericalTarget.copy(this._camera._spherical));
+63319:      (i && (this._localObject.userData.bonesFile = `avatar/${i}`),
+63321:          (this._localObject.userData.modelFiles = s.map((o) => `avatar/${o}`)),
+63324:            (o) => `avatar/${o}`,
+63331:        this._controls.dispose(),
+63332:        (this._controls = null),
+63333:        this._collisionPhysics.geometry &&
+63334:          ((this._collisionPhysics.geometry.boundsTree = null),
+63335:          this._collisionPhysics.geometry.dispose()),
+63337:        (this._camera = null),
+63353:    bonesFile: "avatar/avatar-bones",
+63354:    modelFiles: ["avatar/avatar"],
+63356:      "avatar/avatar-idle",
+63357:      "avatar/avatar-walk",
+63358:      "avatar/avatar-run",
+63359:      "avatar/avatar-air",
+63360:      "avatar/avatar-afk",
+63430:      ["idle", "talk", "idleTalk", "walk"].forEach((c, h) => {
+63457:            ? (e = this._actions.walk)
+63511:      uWiggleDir: { value: new Vector3(0, 1, 0) },
+63533:                float scale = smoothstep(uShowDistance, uShowDistance * 0.8, distance(wPos, cameraPosition)) * uScale * uShow;
+63582:    oe(this, Cr, new Vector3());
+63591:      (this._offset = new Vector3().fromArray(p)),
+63592:      (this._wiggleDirection = new Vector3().fromArray(f)),
+63699:        this._object._scene.camera.position.distanceTo(L(this, Cr)) <
+63823:                    pos.z -= 0.1; // move behind of texts
+63857:      (this._bubble.name = "bubble background"),
+64020:const _v0$d = new Vector3(),
+64021:  _v1$8 = new Vector3(),
+64111:              this._originalQuaternion.copy(this.quaternion),
+64112:              this._targetQuaternion.copy(this.quaternion),
+64139:        (this._targetPosition = new Vector3()),
+64142:        (this._originalQuaternion = new Quaternion()),
+64143:        (this._targetQuaternion = new Quaternion()),
+64145:        this.geometry.computeBoundingSphere(),
+64147:        this.computeBoundingSphere(),
+64148:        (this.boundingSphere.radius += H),
+64159:        (this._textsBubbleGroupOffset = new Vector3().fromArray(M)),
+64187:            ((this._characters._camera.isFollowCamera &&
+64188:              this._characters._camera.overwriteAmount > 0) ||
+64190:              this._characters._controls.cancelJump()));
+64194:          camera: this._scene.camera,
+64227:            ? e._controls._enabled
+64237:              this._targetQuaternion,
+64254:                this._targetQuaternion,
+64256:            : this._targetQuaternion.copy(this._originalQuaternion),
+64260:              this._targetQuaternion,
+64265:            this.quaternion.copy(this._targetQuaternion)),
+64428:          .set(0, this.boundingSphere.radius + 0.2, 0)
+64509:(Ye(Lt, "vDir0", new Vector3()), Ye(Lt, "vDir1", new Vector3()));
+64763:              'Hello! Yes, I opened some mail by mistake earlier. A "planet gravity data analysis", or something...',
+65102:                gInfo = vec4(1.0 - (0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5), encodeNormalSpheremap(normalize(vNormal)), outlineContribution);
+65441:const _v0$c = new Vector3(),
+65442:  _v1$7 = new Vector3(),
+65443:  _v2$1 = new Vector3(),
+65458:      (this.camPosition = new Vector3()),
+65463:      geometryLoader.load("planets/present/intro/button.drc"),
+65502:        camera: this.scene.camera,
+65591:    const e = this.scene.camera;
+65654:const _v0$b = new Vector3(),
+65656:  _q0$3 = new Quaternion();
+65665:    (await Promise.all([this.setupCamera(), this.setupPostProcessing()]),
+65666:      (this.planetGroup = new Group()),
+65667:      (this.planetGroup.name = "Planet Group"),
+65668:      this.add(this.planetGroup),
+65671:          { objClass: planet$1, name: "planet" },
+65705:        (window._camera = this.camera)),
+65708:  setupCamera() {
+65709:    (this.camera.basePosition.set(0, 0, -120),
+65710:      this.camera.baseTarget.set(0, -2.5, 0),
+65711:      (this.camera.lerpRotate = 1),
+65712:      (this.camera.lerpZoom = 1),
+65713:      (this.camera.lerpPan = 1),
+65715:      this.camera.displacement.position.set(0, 0),
+65716:      this.camera.displacement.target.set(-0.01, -0.0075),
+65717:      (this.camera.displacement.rotation = 0.01),
+65718:      (this.camera.lerpPosition = 1),
+65719:      (this.camera.lerpTarget = 0.02),
+65720:      (this.camera.lerpRotation = 0.05),
+65721:      (this.camera.autoRotate = !0),
+65723:        ((this.camera.enablePan = !1),
+65724:        (this.camera.enableZoom = !1),
+65725:        (this.camera.enableRotate = !1)),
+65726:      (this.camera.near = 2),
+65727:      (this.camera.far = 1e3),
+65728:      this.camera.updateProjectionMatrix());
+65744:      (this.light.shadow.camera.near = 50),
+65745:      (this.light.shadow.camera.far = 180),
+65749:    ((this.light.shadow.camera.left = -100),
+65750:      (this.light.shadow.camera.right = e),
+65751:      (this.light.shadow.camera.top = e),
+65752:      (this.light.shadow.camera.bottom = -100),
+65753:      (this.light.shadow.camera.zoom = 3.25),
+65754:      this.light.shadow.camera.updateProjectionMatrix(),
+65761:      (this.camera.zoom = this.mobileLayout ? 0.8 : 1),
+65762:      this.camera.updateProjectionMatrix(),
+65767:      (this.camera.quaternion.setFromRotationMatrix(
+65768:        _m0.lookAt(this.camera.position, this.camera.target, this.camera.up),
+65771:        _v0$b.subVectors(this.camera.position, this.camera.target).normalize(),
+65774:      this.camera.quaternion.premultiply(_q0$3),
+65775:      this.camera.updateMatrixWorld());
+65778:    ((this.planetGroup.position.y = -80),
+65779:      createTween(this.planetGroup.position, {
+65786:            (this.light.position.y += this.planetGroup.position.y),
+65787:            (this.light.target.position.y = this.planetGroup.position.y),
+65791:      this.planetGroup.scale.setScalar(0.3),
+65792:      createTween(this.planetGroup.scale, {
+65799:    ((this.planetGroup.rotation.y = i - Math.PI * 1.5),
+65800:      createTween(this.planetGroup.rotation, {
+65806:      createTween(this.planetGroup.rotation, {
+65841:      createTween(this.camera, {
+65847:            (this.camera.touchAmount = this.camera.autoRotateSpeed);
+65850:      createTween(this.camera._sphericalTarget, {
+65852:          theta: this.camera._sphericalTarget.theta - Math.PI * 0.25,
+65858:      createTween(this.camera._sphericalTarget, {
+65886:      (this.camera = new PerspectiveCamera()),
+65925:      this.camera.copy(this.originalScene.camera),
+65926:      this.camera.updateProjectionMatrix(),
+65927:      this.camera.updateMatrixWorld(),
+65928:      e.render(this.scene, this.camera, this.rt),
+65934:  planet: {
+65938:    uInfoRange: { value: new Vector3(1e-4, 2e-4, 0.1) },
+65940:    uDepthRange: { value: new Vector3(1e-4, 0.01001, 0.1) },
+65941:    uNormalRange: { value: new Vector3(0.4, 0.5, 0.3) },
+65954:        uCameraNear: { value: e.camera.near, ignore: !0 },
+65955:        uCameraFar: { value: e.camera.far, ignore: !0 },
+65961:        uInfoRange: { value: new Vector3() },
+65963:        uDepthRange: { value: new Vector3() },
+65964:        uNormalRange: { value: new Vector3() },
+65985:                uniform float uCameraNear;
+65986:                uniform float uCameraFar;
+66034:                    float outlineValue = outline(tDiffuse, tInfo, vUv, uOutlineThickness, resScale, uInfoRange, uDepthRange, uNormalRange, uSmoothMargin, uInfoMinScale, uOutlineFade, vec2(uCameraNear, uCameraFar), nearestDepth, centerDepth);
+66037:                    float waterDepth = getLinearDepth(1.0 - water.a, uCameraNear, uCameraFar);
+66067:  ((i.uniforms.uCameraNear.value = r.camera.near),
+66068:    (i.uniforms.uCameraFar.value = r.camera.far));
+66069:  const s = customUniforms[r.name] || customUniforms.planet;
+66106:    new OrthographicCamera(-1, 1, 1, -1, 0, 1),
+66108:  ((o.clear = !1), (r.__controlsPass = o), e.insertPass(o, 1));
+66135:const _v0$a = new Vector3(),
+66246:                    // rotate position according to the planet
+66247:                    mat4 planetRot = getMatrixRotation(viewMatrix);
+66248:                    vec3 pos = (vec4(position, 1.0) * planetRot).xyz;
+66255:                    vNormal = normalize(normalMatrix * (rot * (vec4(normal, 0.0) * planetRot)).xyz);
+66330:                    gInfo = vec4(1.0 - (0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5), encodeNormalSpheremap(geometryNormal), contribution);
+66391:                    // rotate position according to the planet
+66392:                    mat4 planetRot = getMatrixRotation(viewMatrix);
+66393:                    vec3 pos = (vec4(position, 1.0) * planetRot).xyz;
+66494:        .addScaledVector(e.up, e.boundingSphere.radius * 1.05)
+66558:      "noises-terrain.ktx2",
+66593:const _v0$9 = new Vector3(),
+66594:  _v1$6 = new Vector3(),
+66595:  _v2 = new Vector3(),
+66596:  _q0$2 = new Quaternion();
+66653:      _v1$6.add(_v2.set(-0.1, 0, 0.9).applyQuaternion(s.quaternion)));
+66666:          _v0$9.add(_v1$6.set(-0.1, 0, 0.1).applyQuaternion(s.quaternion)),
+66701:      (this.ambianceSpheres = {
+66703:          sphere: new Sphere(new Vector3(-13.4694, -14.7504, 1.36152), 15.4),
+66707:          sphere: new Sphere(new Vector3(27.6687, 13.6836, 8.14707), 27.5),
+66711:          sphere: new Sphere(new Vector3(-11.8381, 12.2255, -1.87004), 12),
+66715:          sphere: new Sphere(new Vector3(-2.06543, 2.01072, -32.7937), 22.5),
+66719:          sphere: new Sphere(new Vector3(11.2153, -18.8393, -9.09714), 12),
+66723:          sphere: new Sphere(new Vector3(-7.21651, 34.6679, -5.4496), 10),
+66728:        walk: 0,
+66729:        walkWater: 0,
+66756:    this.volumes.walk = math.lerpFPS(this.volumes.walk, a, 0.25);
+66758:    this.volumes.walkWater = math.lerpFPS(this.volumes.walkWater, a * l, 0.25);
+66759:    const c = Math.max(0, this.volumes.walk - this.volumes.walkWater),
+66760:      h = this.volumes.walkWater;
+66763:    const d = Object.keys(this.ambianceSpheres);
+66768:        T = this.ambianceSpheres[b].sphere,
+66773:          Math.max(0, T.radius - this.ambianceSpheres[b].margin),
+66895:const _v0$8 = new Vector3(),
+66896:  _v1$5 = new Vector3(),
+66897:  _q0$1 = new Quaternion(),
+66901:    bonesFile: "avatar/avatar-bones",
+66902:    modelFiles: ["avatar/accessories/base"],
+66904:      "avatar/avatar-idle",
+66905:      "avatar/avatar-run",
+66906:      "avatar/avatar-sprint",
+66907:      "avatar/avatar-air",
+66908:      "avatar/avatar-afk1",
+66909:      "avatar/avatar-afk2",
+66910:      "avatar/avatar-afk3",
+66981:      (this.isCameraLocked = !1),
+66995:    ).map((h) => `avatar/${h}`)),
+67019:        colliderGeometry: this.scene.characterInitialOptions.collider,
+67024:        gravity: -0.00981,
+67039:        relativeCameraPosition:
+67040:          this.scene.characterInitialOptions.relativeCameraPosition,
+67041:        relativeCameraOffset:
+67042:          this.scene.characterInitialOptions.relativeCameraOffset,
+67045:        servers: ["wss://multiplayer-server-76608060529.us-central1.run.app"],
+67068:        s.push(geometryLoader.load(`avatar/accessories/${p}.drc`, !0)),
+67085:            (this.isCameraLockingInteractingElement()
+67086:              ? this.lockCameraObject()
+67087:              : this.unlockCamera()),
+67104:        (h = this.scene.__controlsPass) == null ||
+67105:          h.scene.add(this.mesh._controls._circles);
+67110:  isCameraLockingInteractingElement() {
+67129:    (e ? this.mesh._controls.enable() : this.mesh._controls.disable(),
+67133:    this.isCameraLockingInteractingElement() || this.enableControls(!0);
+67138:  lockCameraObject() {
+67139:    if (!this.mesh._camera.isFollowCamera) return;
+67140:    ((this.isCameraLocked = !0),
+67150:    this.mesh._collisionPhysics._snap(o, l, c, !0);
+67156:    const x = this.mesh._camera.touchAmount;
+67166:      (this.mesh._camera.setFollowOverwrite({
+67172:        createTween(this.mesh._camera, {
+67178:              ((this.mesh._camera.touchAmount = math.lerp(
+67181:                this.mesh._camera.overwriteAmount,
+67183:              this.mesh._collisionPhysics._snap(o, l, c, !0));
+67199:        (_v1$5.set(0, 0, 1).applyQuaternion(this.mesh._localObject.quaternion),
+67201:          this.mesh._collisionPhysics._rayCaster.set(_v0$8, _v1$5));
+67202:        const O = this.mesh._collisionPhysics._rayCaster.intersectObject(
+67203:          this.mesh._collisionPhysics._collider,
+67216:      (this.mesh._camera.setFollowOverwrite({
+67222:        createTween(this.mesh._camera, {
+67228:              ((this.mesh._camera.touchAmount = math.lerp(
+67231:                this.mesh._camera.overwriteAmount,
+67233:              this.mesh._collisionPhysics._snap(
+67235:                math.lerp(l, _, this.mesh._camera.overwriteAmount),
+67243:        _v0$8.addScaledVector(a.up, a.geometry.boundingSphere.radius * 2 - 0.5),
+67245:        _v1$5.applyQuaternion(a._targetQuaternion),
+67253:      const T = this.mesh._collisionPhysics._charactersCapsule.radius * 1.1,
+67260:          this.mesh._collisionPhysics._rayCaster.set(_v1$5, _v0$8));
+67261:        const O = this.mesh._collisionPhysics._rayCaster.intersectObject(
+67262:          this.mesh._collisionPhysics._collider,
+67268:        this.mesh._collisionPhysics._rayCaster.set(
+67272:        const N = this.mesh._collisionPhysics._rayCaster.intersectObject(
+67273:          this.mesh._collisionPhysics._collider,
+67283:        _v0$8.applyQuaternion(
+67286:      const R = _s0.setFromVector3(_v0$8).theta;
+67291:          this.mesh._camera._sphericalTarget.theta,
+67295:        (_v0$8.set(0, 0, -1).applyQuaternion(a._targetQuaternion),
+67300:          _v0$8.applyQuaternion(
+67303:        const O = _s0.setFromVector3(_v0$8).theta;
+67305:          this.mesh._camera._sphericalTarget.theta,
+67314:      (this.mesh._camera.setFollowOverwrite({
+67320:        createTween(this.mesh._camera, {
+67327:            this.mesh._camera.touchAmount = math.lerp(
+67330:              this.mesh._camera.overwriteAmount,
+67334:                .lerp(_v1$5.fromArray(D), this.mesh._camera.overwriteAmount)
+67337:              H = math.lerp(l, _, this.mesh._camera.overwriteAmount);
+67338:            (this.mesh._collisionPhysics._snap(O, H, N, !0),
+67344:              this.mesh._collisionPhysics._performShapecast(_o0, 1 / k);
+67345:            this.mesh._collisionPhysics._snap(
+67356:  unlockCamera() {
+67357:    if (!this.mesh._camera.isFollowCamera || !this.isCameraLocked) return;
+67358:    ((this.isCameraLocked = !1),
+67361:        this.mesh._camera.overwriteAmount === 1 &&
+67362:        ((this.scene.camera._sphericalTarget.theta =
+67363:          this.scene.camera.overwriteSpherical.theta),
+67364:        (this.scene.camera._spherical.theta =
+67365:          this.scene.camera._sphericalTarget.theta)),
+67368:    (createTween(this.mesh._camera, {
+67383:const _v0$7 = new Vector3(),
+67384:  _v1$4 = new Vector3(),
+67385:  _s$4 = new Sphere(),
+67409:class terrain {
+67436:                `planets/${this.scene.terrainOptions.terrain}/low/full_${_}.drc`,
+67443:                `planets/${this.scene.terrainOptions.terrain}/low/full-lod-1_${_}.drc`,
+67450:                `planets/${this.scene.terrainOptions.terrain}/low/full-lod-3_${_}.drc`,
+67462:                `planets/${this.scene.terrainOptions.terrain}/full_${_}.drc`,
+67469:                `planets/${this.scene.terrainOptions.terrain}/full-lod-1_${_}.drc`,
+67476:                `planets/${this.scene.terrainOptions.terrain}/full-lod-2_${_}.drc`,
+67483:                `planets/${this.scene.terrainOptions.terrain}/full-lod-3_${_}.drc`,
+67511:      (this.mesh.name = "planet-chunks-LOD-0"),
+67538:        ((w.name = `planet-chunks-LOD-${x + 1}`),
+67566:      (this.mesh.getBoundingSphereAt(d, _s$4),
+67568:          !_frustum.intersectsSphere(_s$4)),
+67626:const _v0$6 = new Vector3();
+67627:class planet extends scene {
+67629:    (super({ customCamera: followCamera$1 }),
+67631:      (this.terrainOptions = { terrain: i.terrain || "present", chunks: 10 }),
+67636:        relativeCameraPosition: new Vector3(0, 1, 5),
+67637:        relativeCameraOffset: new Vector3(-0.65, 0, 1),
+67638:        collider: null,
+67639:        roomPrefix: i.roomPrefix || "planets-default",
+67648:      (this._planetID = i.planet),
+67655:      this.setupCamera(),
+67660:      ["terrain", terrain, this.terrainOptions],
+67667:        this.camera.isFollowCamera
+67668:          ? await miscutils.wait(this.camera, "_followedMesh")
+67675:          this.waterScene.camera,
+67689:        (window._camera = this.camera),
+67696:        i.map((a) => geometryLoader.load(`planets/present/hitmesh_${a}.drc`)),
+67698:    this.characterInitialOptions.collider = mergeGeometries(s);
+67700:  setupCamera() {
+67701:    (this.camera.shake.set(0.07, 0.07, 0.02),
+67702:      this.camera.shakeSpeed.setScalar(0.2),
+67703:      (this.camera.near = 0.2),
+67704:      (this.camera.far = 175),
+67705:      this.camera.updateProjectionMatrix());
+67734:    if (this.camera.isFollowCamera) {
+67735:      const e = this.camera._cameraCollisions,
+67736:        i = this.camera.touchAmount;
+67737:      ((this.camera._cameraCollisions = !1),
+67738:        (this.camera.touchAmount = 0),
+67748:            this.camera.overwriteAmount = 1;
+67751:            (_v0$6.copy(this.camera._followedMeshTarget).normalize(),
+67752:              this.camera.overwriteTarget
+67753:                .copy(this.camera._followedMeshTarget)
+67755:              (this.camera.overwriteSpherical.radius = math.mix(
+67756:                this.camera._spherical.radius,
+67760:              (this.camera.overwriteSpherical.phi = this.camera._spherical.phi),
+67761:              (this.camera.overwriteSpherical.theta =
+67762:                this.camera._spherical.theta));
+67765:            ((this.camera.overwriteAmount = 0),
+67766:              (this.camera._cameraCollisions = e),
+67789:          : (createTween(this.camera, { to: { touchAmount: i }, duration: 4 }),
+67798:    this.camera._followedMesh &&
+67800:        ? (this.camera.setOffset([-0.65, 0, 1], !1),
+67801:          (this.camera._cameraTargetLocalLerp = 0.0125),
+67802:          this.camera.displacement.position.set(-0.075, -0.05),
+67803:          (this.camera.zoom = client$1.iphone
+67806:        : (this.camera.setOffset([-0.25, 0, 0.5], !1),
+67807:          (this.camera._cameraTargetLocalLerp = 0.03),
+67808:          this.camera.displacement.position.set(0, 0),
+67809:          (this.camera.zoom = 1)),
+67810:      this.camera.updateProjectionMatrix());
+67890:                pos.z -= 0.005; // move behind of texts
+68075:      uWiggleDir: { value: new Vector3(0, 1, 0) },
+68100:                float scale = smoothstep(uShowDistance, uShowDistance * 0.8, distance(wPos, cameraPosition)) * uScale * uShow;
+68297:      clickInteractionCamera: this.scene.camera,
+68334:        this.scene.characters.unlockCamera()),
+68356:const _q0 = new Quaternion(),
+68357:  _q1 = new Quaternion(),
+68358:  _v0$5 = new Vector3();
+68363:      (this.lastRotation = new Quaternion()),
+68364:      (this.currentRotation = new Quaternion().setFromAxisAngle(
+68376:      new SphereGeometry(55, 32, 32),
+68516:const _v0$4 = new Vector3(),
+68517:  _v1$3 = new Vector3(),
+68518:  _s$3 = new Sphere(),
+68530:    const e = await geometryLoader.batched("planets/present/water.drc"),
+68554:          uCameraNear: { value: this.scene.camera.near },
+68555:          uCameraFar: { value: this.scene.camera.far },
+68594:                uniform float uCameraNear;
+68595:                uniform float uCameraFar;
+68617:                    vec3 sceneViewPos = getViewPosition(sceneDepth, uv, uCameraNear, uCameraFar, uProjMat);
+68621:                    vec3 waterViewPos = getViewPosition(waterSurfaceDepth, uv, uCameraNear, uCameraFar, uProjMat);
+68709:        this.scene.camera.projectionMatrix,
+68712:        this.scene.camera.matrixWorld,
+68717:        this.mesh.getBoundingSphereAt(i, _s$3);
+68737:    const e = await geometryLoader.load("./planets/present/waterfall_vfx.drc"),
+68739:        "./planets/present/waterfallsplash_vfx.drc",
+68742:        "./planets/present/waterfall_inlet_vfx.drc",
+68858:                    // foam near ground
+69124:    const e = await geometryLoader.load("./planets/present/beachfoam_vfx.drc");
+69156:          uCameraNear: { value: this.scene.camera.near },
+69157:          uCameraFar: { value: this.scene.camera.far },
+69172:                    // push closer to ground so you can't see under it
+69213:                uniform float uCameraNear;
+69214:                uniform float uCameraFar;
+69290:                    vec3 sceneViewPos = getViewPosition(sceneDepth, screenUv, uCameraNear, uCameraFar, uProjMat);
+69294:                    vec3 waterViewPos = getViewPosition(waterSurfaceDepth, screenUv, uCameraNear, uCameraFar, uProjMat);
+69353:          this.scene.camera.projectionMatrix,
+69356:            this.scene.camera.matrixWorld,
+69372:    const e = await geometryLoader.load("planets/present/smoke-1.drc"),
+69450:                    // lines are moving away from camera
+69540:        e.map((a) => geometryLoader.load(`planets/present/${a}.drc`)),
+69604:                    // set thickness based on camera distance, so that far away lines don't appear too thin
+69652:const _v0$3 = new Vector3(),
+69653:  _v1$2 = new Vector3(),
+69654:  _s$2 = new Sphere(),
+69659:    charPos: { value: new Vector3() },
+69666:      value: textureLoader.load("noises-terrain.ktx2", "linearfilter-repeat"),
+69712:                // move up when looking in the up direction to prevent bottom outlines
+69714:                vec3 grassCamDir = normalize(cameraPosition - grassBottomPos);
+69718:                vec3 camToGrass = normalize(grassOffset - cameraPosition);
+69734:                // repel by player movement
+69810:                    // add noise to the outline, if the grass color is different than the baseColor, add a chance to remove the outline
+69839:                // remove outline from the bottom
+69848:                gInfo = vec4(1.0 - (0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5), encodeNormalSpheremap(normalize(vNormal)), outlineContribution);
+69868:      `planets/${this.scene.terrainOptions.terrain}/grass.drc`,
+69876:        l.computeBoundingSphere(),
+69877:        (l.boundingSphere.radius += 1),
+69897:        _s$2.copy(s.boundingSphere),
+69906:const _v0$2 = new Vector3(),
+69907:  _v1$1 = new Vector3(),
+69908:  _s$1 = new Sphere(),
+69913:    charPos: { value: new Vector3() },
+69990:                vec3 camToButterfly = normalize(butterflyOffset - cameraPosition);
+70127:                gInfo = vec4(1.0 - (0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5), encodeNormalSpheremap(normalize(vNormal)), outlineContribution);
+70148:      `planets/${this.scene.terrainOptions.terrain}/butterflies.drc`,
+70163:        l.computeBoundingSphere(),
+70164:        (l.boundingSphere.radius += 1),
+70184:        _s$1.copy(s.boundingSphere),
+70193:const _v0$1 = new Vector3(),
+70194:  _v1 = new Vector3(),
+70195:  _s = new Sphere(),
+70209:    charPos: { value: new Vector3() },
+70301:                // shake with player movement
+70386:                    // move details nearest to the camera
+70452:              `planets/present/${this.lowMemory ? "low/" : ""}tree-leaves_${h}.drc`,
+70464:      createLeavesMaterial(this.scene.camera),
+70489:      (this.mesh.getBoundingSphereAt(s, _s),
+70500:class presentScene extends planet {
+70510:      terrain: "present",
+70514:      roomPrefix: "planet-present",
+70522:      (this._devAudioController.camera = this.camera)),
+70593:            "npcs/present/office-worker/office-worker-walk-alt.drc",
+70624:            "npcs/present/office-worker/office-worker-walk.drc",
+70911:            "npcs/present/factory-worker-b/factory-worker-b-walk.drc",
+70913:            "npcs/present/factory-worker-b/factory-worker-b-walk.drc",
+70914:            "npcs/present/factory-worker-b/factory-worker-b-walk.drc",
+71597:              (x = this.scene.controller) == null ? void 0 : x.planetScene) ==
+71605:          this.mesh.quaternion.copy(this.scene.camera.quaternion),
+71607:          this.meshArrow.quaternion.copy(this.scene.camera.quaternion),
+71609:          this.meshClose.quaternion.copy(this.scene.camera.quaternion));
+71612:        camera: this.scene.camera,
+71635:          (i = (e = this.scene.controller) == null ? void 0 : e.planetScene) ==
+71640:      this.scene.controller.planetScene.characters.isCameraLockingInteractingElement() ||
+71641:      this.scene.controller.planetScene.characters.mesh._collisionPhysics
+71643:      this.scene.controller.planetScene.camera.overwriteAmount > 0 ||
+71645:      (this.scene.controller.planetScene.characters.mesh.interactingElement =
+71672:      (this.scene.controller.planetScene.characters.mesh.interactingElement =
+71792:      this.scene.controller.planetScene.characters.setAccessories(
+71830:      this.mesh.computeBoundingSphere(),
+71844:    (this.cameraOptions(),
+71851:  cameraOptions() {
+71852:    ((this.camera.lerpPosition = 0),
+71853:      (this.camera.lerpTarget = 0),
+71854:      (this.camera.lerpRotation = 0),
+71858:          e.planetScene &&
+71859:          (this.camera.copy(this.controller.planetScene.camera, !1),
+71860:          this.camera.updateMatrixWorld(),
+71861:          this.camera.updateProjectionMatrix());
+72397:      this.mesh.computeBoundingSphere(),
+72407:      (this.font = "planet.font"),
+72597:const _v0 = new Vector3();
+72607:          sphere: new Sphere(new Vector3(25.1548, 11.1266, 2.25704), 8.75),
+72611:          sphere: new Sphere(new Vector3(-7.82486, 4.19171, -29.304), 18.45),
+72615:          sphere: new Sphere(new Vector3(8.09011, -13.7658, -12.4145), 10),
+72619:          sphere: new Sphere(new Vector3(-14.4395, -6.11889, 27.0498), 9),
+72623:          sphere: new Sphere(new Vector3(-8.84153, -19.1808, 2.54687), 13),
+72627:          sphere: new Sphere(new Vector3(27.7006, -14.1946, 13.4392), 8),
+72631:          sphere: new Sphere(new Vector3(-21.7063, -6.80204, 6.28998), 5),
+72635:          sphere: new Sphere(new Vector3(-10.1549, 34.7748, -3.82302), 8),
+72639:          sphere: new Sphere(new Vector3(-13.1445, 15.572, -1.75282), 8),
+72979:            : i.planetScene;
+75770:          : s.planetScene) == null
+75773:    i && ((i.mesh.interactingElement = null), i.unlockCamera(), i.disable());
+75811:          : s.planetScene) == null
+75939:    (super({ cameraType: "orthographic" }),
+75960:    (this.cameraOptions(),
+75976:  cameraOptions() {
+75977:    ((this.camera.lerpPosition = 0),
+75978:      (this.camera.lerpTarget = 0),
+75979:      (this.camera.lerpRotation = 0));
+76004:    (this.camera.basePosition.set(
+76007:      this.camera.basePosition.z,
+76009:      this.camera.baseTarget.set(
+76010:        this.camera.basePosition.x,
+76011:        this.camera.basePosition.y,
+76014:      this.camera.updateProjectionMatrix(),
+76046:    (super({ cameraType: "orthographic" }),
+76053:    (this.cameraOptions(),
+76073:  cameraOptions() {
+76074:    ((this.camera.lerpPosition = 0),
+76075:      (this.camera.lerpTarget = 0),
+76076:      (this.camera.lerpRotation = 0));
+76082:        this.scene2D.camera,
+76226:      (this.planetScene = null),
+76258:        this.uiScene.camera,
+76323:      (this.planetScene = e),
+76324:      (this.audioController.camera = this.planetScene.camera),
